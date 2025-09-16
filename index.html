@@ -1,1 +1,516 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Administração - Igreja Assembleia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c5aa0;
+            --secondary: #1a3c78;
+            --accent: #d4af37;
+            --light: #f8f9fa;
+            --dark: #1e2a4a;
+            --text: #333333;
+            --gray: #6c757d;
+            --success: #28a745;
+            --danger: #dc3545;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7ff;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .admin-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .admin-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .admin-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .admin-logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .admin-user {
+            display: flex;
+            align-items: center;
+        }
+        
+        .admin-user img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        
+        /* Layout */
+        .admin-container {
+            display: flex;
+            min-height: calc(100vh - 80px);
+        }
+        
+        /* Sidebar */
+        .admin-sidebar {
+            width: 250px;
+            background-color: var(--dark);
+            color: white;
+            padding: 1.5rem 0;
+        }
+        
+        .admin-sidebar ul {
+            list-style: none;
+        }
+        
+        .admin-sidebar li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .admin-sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .admin-sidebar a:hover,
+        .admin-sidebar a.active {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-left: 4px solid var(--accent);
+        }
+        
+        .admin-sidebar i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* Main Content */
+        .admin-main {
+            flex: 1;
+            padding: 2rem;
+        }
+        
+        .admin-section {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .admin-section h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        /* Forms */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+        
+        .btn-success {
+            background-color: var(--success);
+        }
+        
+        .btn-success:hover {
+            background-color: #218838;
+        }
+        
+        .btn-danger {
+            background-color: var(--danger);
+        }
+        
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+        
+        /* Tables */
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .admin-table th,
+        .admin-table td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .admin-table th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+        }
+        
+        .admin-table tr:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .table-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        /* Dashboard Cards */
+        .dashboard-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .dashboard-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+        }
+        
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+        
+        .card-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.2rem;
+        }
+        
+        .card-content p {
+            color: var(--gray);
+        }
+        
+        /* Login Page */
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+        
+        .login-box {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .login-logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .login-logo i {
+            font-size: 3rem;
+            color: var(--primary);
+        }
+        
+        .login-logo h1 {
+            color: var(--primary);
+            margin-top: 0.5rem;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .admin-container {
+                flex-direction: column;
+            }
+            
+            .admin-sidebar {
+                width: 100%;
+                padding: 1rem 0;
+            }
+            
+            .admin-sidebar ul {
+                display: flex;
+                overflow-x: auto;
+            }
+            
+            .admin-sidebar li {
+                margin-bottom: 0;
+                margin-right: 0.5rem;
+            }
+            
+            .admin-sidebar a {
+                padding: 0.5rem 1rem;
+                white-space: nowrap;
+            }
+            
+            .dashboard-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="admin-header">
+        <div class="container">
+            <div class="admin-header-content">
+                <div class="admin-logo">
+                    <i class="fas fa-church"></i>
+                    <span>Painel de Administração</span>
+                </div>
+                <div class="admin-user">
+                    <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Admin">
+                    <span>Administrador</span>
+                </div>
+            </div>
+        </div>
+    </header>
 
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <ul>
+                <li><a href="#dashboard" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="#informacoes"><i class="fas fa-info-circle"></i> Informações da Igreja</a></li>
+                <li><a href="#eventos"><i class="fas fa-calendar-alt"></i> Gerenciar Eventos</a></li>
+                <li><a href="#pregacoes"><i class="fas fa-video"></i> Gerenciar Pregações</a></li>
+                <li><a href="#ministerios"><i class="fas fa-hands-helping"></i> Gerenciar Ministérios</a></li>
+                <li><a href="#usuarios"><i class="fas fa-users"></i> Gerenciar Usuários</a></li>
+                <li><a href="#configuracoes"><i class="fas fa-cog"></i> Configurações</a></li>
+                <li><a href="#" style="color: #ff6b6b;"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="admin-section">
+                <h2>Dashboard</h2>
+                
+                <div class="dashboard-cards">
+                    <div class="dashboard-card">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>254</h3>
+                            <p>Membros</p>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-icon" style="background-color: #28a745;">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>8</h3>
+                            <p>Eventos este mês</p>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-icon" style="background-color: #ffc107;">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>24</h3>
+                            <p>Pregações</p>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <div class="card-icon" style="background-color: #dc3545;">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>12</h3>
+                            <p>Ministérios</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Atividades Recentes</h3>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Usuário</th>
+                            <th>Ação</th>
+                            <th>Data</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Administrador</td>
+                            <td>Adicionou novo evento: Culto de Celebração</td>
+                            <td>20/06/2023 14:32</td>
+                        </tr>
+                        <tr>
+                            <td>Pastor João</td>
+                            <td>Adicionou nova pregação: A Fé em Tempos de Incerteza</td>
+                            <td>19/06/2023 09:15</td>
+                        </tr>
+                        <tr>
+                            <td>Diácono Pedro</td>
+                            <td>Atualizou informações de contato</td>
+                            <td>18/06/2023 16:45</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Informações da Igreja Section -->
+            <section id="informacoes" class="admin-section" style="display: none;">
+                <h2>Informações da Igreja</h2>
+                
+                <form>
+                    <div class="form-group">
+                        <label for="churchName">Nome da Igreja</label>
+                        <input type="text" id="churchName" class="form-control" value="Igreja Assembleia de Deus">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="churchAddress">Endereço</label>
+                        <input type="text" id="churchAddress" class="form-control" value="Rua Nossa Senhora do Perpétuo Socorro, 322 - Bairro Costeira - Araucária">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="churchPhone">Telefone</label>
+                        <input type="text" id="churchPhone" class="form-control" value="(41) 99960-1251">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="churchEmail">E-mail</label>
+                        <input type="email" id="churchEmail" class="form-control" value="assembelia.gralhazul@gmail.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="churchDescription">Descrição</label>
+                        <textarea id="churchDescription" class="form-control">A Igreja Assembleia de Deus em Araucária tem como missão servir a comunidade local, pregando o Evangelho de Jesus Cristo e promovendo o crescimento espiritual de seus membros.</textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="churchServiceTimes">Horários de Culto</label>
+                        <textarea id="churchServiceTimes" class="form-control">Domingo: 9h e 19h
+Quarta-feira: 20h (Oração)
+Sexta-feira: 20h (Jovens)</textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-success">Salvar Alterações</button>
+                </form>
+            </section>
+
+            <!-- Gerenciar Eventos Section -->
+            <section id="eventos" class="admin-section" style="display: none;">
+                <h2>Gerenciar Eventos</h2>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                    <h3 style="margin: 0;">Próximos Eventos</h3>
+                    <button class="btn">Adicionar Evento</button>
+                </div>
+                
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Data</th>
+                            <th>Evento</th>
+                            <th>Local</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>25/06/2023 19:00</td>
+                            <td>Culto de Celebração</td>
+                            <td>Igreja Assembleia</td>
+                            <td class="table-actions">
+                                <button class="btn" style="padding: 0.4rem 0.8rem;">Editar</button>
+                                <button class="btn btn-danger" style="padding: 0.4rem 0.8rem;">Excluir</button>
+                            </td>
+                       
