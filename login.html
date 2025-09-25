@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Assembleia</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Login - TCCTerceir-o</title>
     <style>
         * {
             margin: 0;
@@ -14,190 +13,68 @@
         }
         
         body {
-            background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #3949ab 100%);
-            height: 100vh;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
             display: flex;
             justify-content: center;
             align-items: center;
+            min-height: 100vh;
             padding: 20px;
         }
         
         .login-container {
             background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
             width: 100%;
-            max-width: 450px;
-            padding: 40px;
-            position: relative;
+            max-width: 400px;
             overflow: hidden;
         }
         
-        .login-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, #3949ab, #1a237e);
+        .login-header {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
         }
         
-        .login-form h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #283593;
-            font-size: 28px;
-            font-weight: 600;
+        .login-header h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .login-header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .login-form {
+            padding: 30px;
         }
         
         .form-group {
-            margin-bottom: 25px;
-            position: relative;
+            margin-bottom: 20px;
         }
         
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            color: #555;
-            font-weight: 500;
-            font-size: 16px;
+            font-weight: 600;
+            color: #333;
         }
         
         .form-group input {
             width: 100%;
-            padding: 15px 15px 15px 45px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
             font-size: 16px;
-            transition: border-color 0.3s;
+            transition: border 0.3s;
         }
         
         .form-group input:focus {
-            border-color: #3949ab;
+            border-color: #6a11cb;
             outline: none;
-        }
-        
-        .form-group i {
-            position: absolute;
-            left: 15px;
-            top: 40px;
-            color: #3949ab;
-            font-size: 18px;
-        }
-        
-        .btn {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(90deg, #3949ab, #1a237e);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 5px 15px rgba(57, 73, 171, 0.4);
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(57, 73, 171, 0.5);
-        }
-        
-        .btn:active {
-            transform: translateY(0);
-        }
-        
-        .btn-secondary {
-            background: linear-gradient(90deg, #78909c, #546e7a);
-            box-shadow: 0 5px 15px rgba(84, 110, 122, 0.4);
-        }
-        
-        .btn-secondary:hover {
-            box-shadow: 0 8px 20px rgba(84, 110, 122, 0.5);
-        }
-        
-        .signup-link {
-            text-align: center;
-            margin-top: 25px;
-            color: #666;
-            font-size: 16px;
-        }
-        
-        .signup-link a {
-            color: #3949ab;
-            text-decoration: none;
-            cursor: pointer;
-            font-weight: 600;
-        }
-        
-        .error-message {
-            color: #e53935;
-            font-size: 14px;
-            margin-top: 8px;
-            display: none;
-            text-align: center;
-            background-color: #ffebee;
-            padding: 10px;
-            border-radius: 5px;
-            border-left: 4px solid #e53935;
-        }
-        
-        .success-message {
-            color: #43a047;
-            font-size: 14px;
-            margin-top: 8px;
-            display: none;
-            text-align: center;
-            background-color: #e8f5e9;
-            padding: 10px;
-            border-radius: 5px;
-            border-left: 4px solid #43a047;
-        }
-        
-        .user-info {
-            display: none;
-            text-align: center;
-        }
-        
-        .user-info h2 {
-            color: #3949ab;
-            margin-bottom: 25px;
-        }
-        
-        .user-details {
-            background-color: #f5f5f5;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 25px;
-            border: 1px solid #eee;
-        }
-        
-        .user-details p {
-            margin: 10px 0;
-            color: #555;
-            font-size: 17px;
-        }
-        
-        .hidden {
-            display: none;
-        }
-        
-        .logo {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-        
-        .logo h1 {
-            color: #3949ab;
-            font-size: 32px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-        
-        .logo span {
-            color: #1a237e;
+            box-shadow: 0 0 0 2px rgba(106, 17, 203, 0.2);
         }
         
         .remember-forgot {
@@ -208,307 +85,171 @@
             font-size: 14px;
         }
         
-        .remember-forgot label {
+        .remember-me {
             display: flex;
             align-items: center;
-            color: #555;
         }
         
-        .remember-forgot input {
-            margin-right: 8px;
+        .remember-me input {
+            margin-right: 5px;
         }
         
-        .remember-forgot a {
-            color: #3949ab;
+        .forgot-password {
+            color: #6a11cb;
             text-decoration: none;
         }
         
-        @media (max-width: 500px) {
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+        
+        .login-button {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 12px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .login-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(106, 17, 203, 0.4);
+        }
+        
+        .login-button:active {
+            transform: translateY(0);
+        }
+        
+        .signup-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        
+        .signup-link a {
+            color: #6a11cb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        @media (max-width: 480px) {
             .login-container {
-                padding: 30px 20px;
+                max-width: 100%;
             }
             
-            .login-form h2 {
-                font-size: 24px;
+            .login-form {
+                padding: 20px;
             }
             
-            .btn {
-                font-size: 16px;
+            .remember-forgot {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .forgot-password {
+                margin-top: 10px;
             }
         }
     </style>
 </head>
 <body>
     <div class="login-container">
-        <div class="logo">
-            <h1>TCC <span>Terceirô</span></h1>
+        <div class="login-header">
+            <h1>TCCTerceir-o</h1>
+            <p>Faça login para acessar sua conta</p>
         </div>
         
-        <div id="loginForm" class="login-form">
-            <h2>Login do Sistema</h2>
+        <form class="login-form" id="loginForm">
             <div class="form-group">
-                <label for="username">Usuário</label>
-                <i class="fas fa-user"></i>
-                <input type="text" id="username" name="username" required placeholder="Digite seu usuário">
+                <label for="username">Usuário ou E-mail</label>
+                <input type="text" id="username" name="username" required>
+                <div class="error-message" id="usernameError">Por favor, insira um usuário ou e-mail válido</div>
             </div>
+            
             <div class="form-group">
                 <label for="password">Senha</label>
-                <i class="fas fa-lock"></i>
-                <input type="password" id="password" name="password" required placeholder="Digite sua senha">
+                <input type="password" id="password" name="password" required>
+                <div class="error-message" id="passwordError">Por favor, insira sua senha</div>
             </div>
+            
             <div class="remember-forgot">
-                <label>
-                    <input type="checkbox" id="remember">
-                    Lembrar-me
-                </label>
-                <a href="#" onclick="showForgotPassword()">Esqueci a senha</a>
+                <div class="remember-me">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Lembrar-me</label>
+                </div>
+                <a href="#" class="forgot-password">Esqueceu a senha?</a>
             </div>
-            <button type="button" class="btn" onclick="login()">Entrar</button>
-            <div class="error-message" id="errorMessage">Usuário ou senha incorretos!</div>
+            
+            <button type="submit" class="login-button">Entrar</button>
+            
             <div class="signup-link">
-                Não tem uma conta? <a onclick="showRegisterForm()">Cadastre-se aqui</a>
+                Não tem uma conta? <a href="#">Cadastre-se</a>
             </div>
-        </div>
-
-        <div id="registerForm" class="login-form hidden">
-            <h2>Criar Nova Conta</h2>
-            <div class="form-group">
-                <label for="newUsername">Usuário</label>
-                <i class="fas fa-user-plus"></i>
-                <input type="text" id="newUsername" name="newUsername" required placeholder="Escolha um usuário">
-            </div>
-            <div class="form-group">
-                <label for="newPassword">Senha</label>
-                <i class="fas fa-key"></i>
-                <input type="password" id="newPassword" name="newPassword" required placeholder="Crie uma senha (mín. 6 caracteres)">
-            </div>
-            <div class="form-group">
-                <label for="confirmPassword">Confirmar Senha</label>
-                <i class="fas fa-check-circle"></i>
-                <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Repita a senha">
-            </div>
-            <button type="button" class="btn" onclick="register()">Criar Conta</button>
-            <div class="error-message" id="registerErrorMessage"></div>
-            <div class="success-message" id="registerSuccessMessage">Conta criada com sucesso!</div>
-            <div class="signup-link">
-                Já tem uma conta? <a onclick="showLoginForm()">Faça login aqui</a>
-            </div>
-        </div>
-        
-        <div id="forgotPassword" class="login-form hidden">
-            <h2>Recuperar Senha</h2>
-            <div class="form-group">
-                <label for="recoveryEmail">E-mail</label>
-                <i class="fas fa-envelope"></i>
-                <input type="email" id="recoveryEmail" name="recoveryEmail" required placeholder="Digite seu e-mail cadastrado">
-            </div>
-            <button type="button" class="btn" onclick="recoverPassword()">Enviar Link de Recuperação</button>
-            <div class="error-message" id="recoveryErrorMessage"></div>
-            <div class="success-message" id="recoverySuccessMessage">Link de recuperação enviado para seu e-mail!</div>
-            <div class="signup-link">
-                Lembrou sua senha? <a onclick="showLoginForm()">Fazer login</a>
-            </div>
-        </div>
-        
-        <div id="userInfo" class="user-info">
-            <h2>Login realizado com sucesso!</h2>
-            <div class="user-details">
-                <p>Bem-vindo, <span id="userDisplayName"></span>!</p>
-                <p>Seu último acesso foi em: <span id="lastLogin"></span></p>
-            </div>
-            <button class="btn btn-secondary" onclick="logout()">Sair</button>
-        </div>
+        </form>
     </div>
 
     <script>
-        // Verificar se já está logado ao carregar a página
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-            if (currentUser) {
-                showUserInfo(currentUser);
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const usernameError = document.getElementById('usernameError');
+            const passwordError = document.getElementById('passwordError');
+            
+            // Resetar mensagens de erro
+            usernameError.style.display = 'none';
+            passwordError.style.display = 'none';
+            
+            let isValid = true;
+            
+            // Validação básica
+            if (username.trim() === '') {
+                usernameError.style.display = 'block';
+                isValid = false;
             }
             
-            // Verificar se há lembrar usuário
-            const rememberedUser = localStorage.getItem('rememberedUser');
-            if (rememberedUser) {
-                document.getElementById('username').value = rememberedUser;
-                document.getElementById('remember').checked = true;
+            if (password.trim() === '') {
+                passwordError.style.display = 'block';
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Aqui você pode adicionar a lógica de autenticação
+                // Por enquanto, apenas um alerta de sucesso
+                alert('Login realizado com sucesso! Redirecionando...');
+                // window.location.href = 'https://cantelerai.github.io/tccterceir-o/';
             }
         });
         
-        // Mostrar formulário de registro
-        function showRegisterForm() {
-            document.getElementById('loginForm').classList.add('hidden');
-            document.getElementById('registerForm').classList.remove('hidden');
-            document.getElementById('userInfo').classList.add('hidden');
-            document.getElementById('forgotPassword').classList.add('hidden');
-            clearMessages();
-        }
-        
-        // Mostrar formulário de login
-        function showLoginForm() {
-            document.getElementById('registerForm').classList.add('hidden');
-            document.getElementById('loginForm').classList.remove('hidden');
-            document.getElementById('userInfo').classList.add('hidden');
-            document.getElementById('forgotPassword').classList.add('hidden');
-            clearMessages();
-        }
-        
-        // Mostrar recuperação de senha
-        function showForgotPassword() {
-            document.getElementById('loginForm').classList.add('hidden');
-            document.getElementById('registerForm').classList.add('hidden');
-            document.getElementById('userInfo').classList.add('hidden');
-            document.getElementById('forgotPassword').classList.remove('hidden');
-            clearMessages();
-        }
-        
-        // Mostrar informações do usuário
-        function showUserInfo(user) {
-            document.getElementById('loginForm').classList.add('hidden');
-            document.getElementById('registerForm').classList.add('hidden');
-            document.getElementById('userInfo').classList.remove('hidden');
-            document.getElementById('forgotPassword').classList.add('hidden');
-            document.getElementById('userDisplayName').textContent = user.username;
-            document.getElementById('lastLogin').textContent = new Date().toLocaleString();
-        }
-        
-        // Limpar mensagens
-        function clearMessages() {
-            document.getElementById('errorMessage').style.display = 'none';
-            document.getElementById('registerErrorMessage').style.display = 'none';
-            document.getElementById('registerSuccessMessage').style.display = 'none';
-            document.getElementById('recoveryErrorMessage').style.display = 'none';
-            document.getElementById('recoverySuccessMessage').style.display = 'none';
-        }
-        
-        // Registrar novo usuário
-        function register() {
-            const newUsername = document.getElementById('newUsername').value;
-            const newPassword = document.getElementById('newPassword').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
-            
-            const errorMessage = document.getElementById('registerErrorMessage');
-            const successMessage = document.getElementById('registerSuccessMessage');
-            
-            // Validações
-            if (newPassword !== confirmPassword) {
-                errorMessage.textContent = 'As senhas não coincidem!';
-                errorMessage.style.display = 'block';
-                successMessage.style.display = 'none';
-                return;
+        // Validação em tempo real
+        document.getElementById('username').addEventListener('input', function() {
+            if (this.value.trim() !== '') {
+                document.getElementById('usernameError').style.display = 'none';
             }
-            
-            if (newPassword.length < 6) {
-                errorMessage.textContent = 'A senha deve ter pelo menos 6 caracteres!';
-                errorMessage.style.display = 'block';
-                successMessage.style.display = 'none';
-                return;
-            }
-            
-            // Verificar se já existem usuários cadastrados
-            let users = JSON.parse(localStorage.getItem('users')) || [];
-            
-            // Verificar se o usuário já existe
-            if (users.some(user => user.username === newUsername)) {
-                errorMessage.textContent = 'Este usuário já existe!';
-                errorMessage.style.display = 'block';
-                successMessage.style.display = 'none';
-                return;
-            }
-            
-            // Adicionar novo usuário
-            users.push({
-                username: newUsername,
-                password: newPassword
-            });
-            
-            localStorage.setItem('users', JSON.stringify(users));
-            
-            successMessage.style.display = 'block';
-            errorMessage.style.display = 'none';
-            
-            // Limpar formulário
-            document.getElementById('newUsername').value = '';
-            document.getElementById('newPassword').value = '';
-            document.getElementById('confirmPassword').value = '';
-            
-            // Mostrar formulário de login após 2 segundos
-            setTimeout(() => {
-                showLoginForm();
-            }, 2000);
-        }
+        });
         
-        // Realizar login
-        function login() {
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const remember = document.getElementById('remember').checked;
-            
-            const errorMessage = document.getElementById('errorMessage');
-            
-            // Lembrar usuário se solicitado
-            if (remember) {
-                localStorage.setItem('rememberedUser', username);
-            } else {
-                localStorage.removeItem('rememberedUser');
+        document.getElementById('password').addEventListener('input', function() {
+            if (this.value.trim() !== '') {
+                document.getElementById('passwordError').style.display = 'none';
             }
-            
-            // Obter usuários do localStorage
-            const users = JSON.parse(localStorage.getItem('users')) || [];
-            
-            // Verificar credenciais
-            const user = users.find(user => user.username === username && user.password === password);
-            
-            if (user) {
-                // Login bem-sucedido
-                errorMessage.style.display = 'none';
-                
-                // Salvar sessão do usuário
-                localStorage.setItem('currentUser', JSON.stringify(user));
-                
-                // Mostrar informações do usuário
-                showUserInfo(user);
-            } else {
-                // Login falhou
-                errorMessage.style.display = 'block';
-            }
-        }
-        
-        // Recuperar senha
-        function recoverPassword() {
-            const email = document.getElementById('recoveryEmail').value;
-            
-            const errorMessage = document.getElementById('recoveryErrorMessage');
-            const successMessage = document.getElementById('recoverySuccessMessage');
-            
-            // Simulação de recuperação de senha
-            if (email) {
-                successMessage.textContent = 'Instruções de recuperação enviadas para: ' + email;
-                successMessage.style.display = 'block';
-                errorMessage.style.display = 'none';
-                
-                // Limpar campo
-                document.getElementById('recoveryEmail').value = '';
-            } else {
-                errorMessage.textContent = 'Por favor, informe seu e-mail!';
-                errorMessage.style.display = 'block';
-                successMessage.style.display = 'none';
-            }
-        }
-        
-        // Realizar logout
-        function logout() {
-            // Remover usuário atual do localStorage
-            localStorage.removeItem('currentUser');
-            
-            // Mostrar formulário de login
-            showLoginForm();
-            
-            // Limpar campos
-            document.getElementById('username').value = '';
-            document.getElementById('password').value = '';
-        }
+        });
     </script>
 </body>
 </html>
