@@ -3,86 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - TCCTerceir-o</title>
+    <title>Login - TCCTerceirão</title>
     <style>
+        /* Estilos existentes do seu site */
         body {
+            margin: 0;
+            padding: 0;
             font-family: Arial, sans-serif;
-            background: #f0f2f5;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
         }
-        
-        .login-box {
+
+        .login-container {
             background: white;
             padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 400px;
             text-align: center;
         }
-        
-        .login-box h2 {
+
+        .logo {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #764ba2;
             margin-bottom: 20px;
-            color: #333;
         }
-        
-        .input-group {
-            margin-bottom: 15px;
-            text-align: left;
-        }
-        
-        .input-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        
-        .input-group input {
+
+        .login-form input {
             width: 100%;
-            padding: 8px;
+            padding: 15px;
+            margin: 10px 0;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 5px;
+            font-size: 16px;
         }
-        
-        button {
+
+        .login-btn {
             width: 100%;
-            padding: 10px;
-            background: #007bff;
+            padding: 15px;
+            background: #764ba2;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
+            font-size: 16px;
             cursor: pointer;
+            margin-top: 10px;
         }
-        
-        button:hover {
-            background: #0056b3;
+
+        .login-btn:hover {
+            background: #667eea;
+        }
+
+        .links {
+            margin-top: 20px;
+        }
+
+        .links a {
+            color: #764ba2;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            color: #764ba2;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
-    <div class="login-box">
-        <h2>Login</h2>
-        <form id="loginForm">
-            <div class="input-group">
-                <label>Usuário:</label>
-                <input type="text" id="username" required>
-            </div>
-            <div class="input-group">
-                <label>Senha:</label>
-                <input type="password" id="password" required>
-            </div>
-            <button type="submit">Entrar</button>
+    <div class="login-container">
+        <div class="logo">TCCTerceirão</div>
+        <form class="login-form" id="loginForm">
+            <input type="text" placeholder="Usuário ou E-mail" required>
+            <input type="password" placeholder="Senha" required>
+            <button type="submit" class="login-btn">Entrar</button>
         </form>
+        
+        <div class="links">
+            <a href="#">Esqueci a senha</a>
+            <a href="#">Cadastrar</a>
+        </div>
+        
+        <a href="index.html" class="back-btn">← Voltar ao site</a>
     </div>
 
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Login realizado!');
-            // Redirecionar para a página principal
-            window.location.href = 'https://cantelerai.github.io/tccterceir-o/';
+            
+            // Simulação de login - você pode substituir por autenticação real
+            const username = this.querySelector('input[type="text"]').value;
+            const password = this.querySelector('input[type="password"]').value;
+            
+            if(username && password) {
+                alert('Login realizado com sucesso!');
+                // Redirecionar para a página principal após login
+                window.location.href = 'index.html';
+            }
         });
     </script>
 </body>
