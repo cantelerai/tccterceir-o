@@ -5,250 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - TCCTerceir-o</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
         body {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            padding: 20px;
+            height: 100vh;
+            margin: 0;
         }
         
-        .login-container {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            max-width: 400px;
-            overflow: hidden;
-        }
-        
-        .login-header {
-            background: linear-gradient(to right, #6a11cb, #2575fc);
-            color: white;
-            padding: 30px 20px;
+        .login-box {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 300px;
             text-align: center;
         }
         
-        .login-header h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        
-        .login-header p {
-            font-size: 14px;
-            opacity: 0.9;
-        }
-        
-        .login-form {
-            padding: 30px;
-        }
-        
-        .form-group {
+        .login-box h2 {
             margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
             color: #333;
         }
         
-        .form-group input {
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .input-group input {
             width: 100%;
-            padding: 12px 15px;
+            padding: 8px;
             border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: border 0.3s;
+            border-radius: 4px;
         }
         
-        .form-group input:focus {
-            border-color: #6a11cb;
-            outline: none;
-            box-shadow: 0 0 0 2px rgba(106, 17, 203, 0.2);
-        }
-        
-        .remember-forgot {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
-        
-        .remember-me {
-            display: flex;
-            align-items: center;
-        }
-        
-        .remember-me input {
-            margin-right: 5px;
-        }
-        
-        .forgot-password {
-            color: #6a11cb;
-            text-decoration: none;
-        }
-        
-        .forgot-password:hover {
-            text-decoration: underline;
-        }
-        
-        .login-button {
-            background: linear-gradient(to right, #6a11cb, #2575fc);
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
             color: white;
             border: none;
-            border-radius: 5px;
-            padding: 12px;
-            width: 100%;
-            font-size: 16px;
-            font-weight: 600;
+            border-radius: 4px;
             cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
         }
         
-        .login-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(106, 17, 203, 0.4);
-        }
-        
-        .login-button:active {
-            transform: translateY(0);
-        }
-        
-        .signup-link {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-        }
-        
-        .signup-link a {
-            color: #6a11cb;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        .signup-link a:hover {
-            text-decoration: underline;
-        }
-        
-        .error-message {
-            color: #e74c3c;
-            font-size: 14px;
-            margin-top: 5px;
-            display: none;
-        }
-        
-        @media (max-width: 480px) {
-            .login-container {
-                max-width: 100%;
-            }
-            
-            .login-form {
-                padding: 20px;
-            }
-            
-            .remember-forgot {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .forgot-password {
-                margin-top: 10px;
-            }
+        button:hover {
+            background: #0056b3;
         }
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-header">
-            <h1>TCCTerceir-o</h1>
-            <p>Faça login para acessar sua conta</p>
-        </div>
-        
-        <form class="login-form" id="loginForm">
-            <div class="form-group">
-                <label for="username">Usuário ou E-mail</label>
-                <input type="text" id="username" name="username" required>
-                <div class="error-message" id="usernameError">Por favor, insira um usuário ou e-mail válido</div>
+    <div class="login-box">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label>Usuário:</label>
+                <input type="text" id="username" required>
             </div>
-            
-            <div class="form-group">
-                <label for="password">Senha</label>
-                <input type="password" id="password" name="password" required>
-                <div class="error-message" id="passwordError">Por favor, insira sua senha</div>
+            <div class="input-group">
+                <label>Senha:</label>
+                <input type="password" id="password" required>
             </div>
-            
-            <div class="remember-forgot">
-                <div class="remember-me">
-                    <input type="checkbox" id="remember" name="remember">
-                    <label for="remember">Lembrar-me</label>
-                </div>
-                <a href="#" class="forgot-password">Esqueceu a senha?</a>
-            </div>
-            
-            <button type="submit" class="login-button">Entrar</button>
-            
-            <div class="signup-link">
-                Não tem uma conta? <a href="#">Cadastre-se</a>
-            </div>
+            <button type="submit">Entrar</button>
         </form>
     </div>
 
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const usernameError = document.getElementById('usernameError');
-            const passwordError = document.getElementById('passwordError');
-            
-            // Resetar mensagens de erro
-            usernameError.style.display = 'none';
-            passwordError.style.display = 'none';
-            
-            let isValid = true;
-            
-            // Validação básica
-            if (username.trim() === '') {
-                usernameError.style.display = 'block';
-                isValid = false;
-            }
-            
-            if (password.trim() === '') {
-                passwordError.style.display = 'block';
-                isValid = false;
-            }
-            
-            if (isValid) {
-                // Aqui você pode adicionar a lógica de autenticação
-                // Por enquanto, apenas um alerta de sucesso
-                alert('Login realizado com sucesso! Redirecionando...');
-                // window.location.href = 'https://cantelerai.github.io/tccterceir-o/';
-            }
-        });
-        
-        // Validação em tempo real
-        document.getElementById('username').addEventListener('input', function() {
-            if (this.value.trim() !== '') {
-                document.getElementById('usernameError').style.display = 'none';
-            }
-        });
-        
-        document.getElementById('password').addEventListener('input', function() {
-            if (this.value.trim() !== '') {
-                document.getElementById('passwordError').style.display = 'none';
-            }
+            alert('Login realizado!');
+            // Redirecionar para a página principal
+            window.location.href = 'https://cantelerai.github.io/tccterceir-o/';
         });
     </script>
 </body>
