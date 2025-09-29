@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igreja - Site Oficial</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --church-brown: #8B4513;
+            --church-gold: #D4AF37;
+            --church-light: #F5F5DC;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--church-light);
+        }
+        
+        .navbar {
+            background: var(--church-brown) !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(139, 69, 19, 0.8), rgba(139, 69, 19, 0.9)), url('https://via.placeholder.com/1920x600');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .church-card {
+            border-left: 4px solid var(--church-brown);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .btn-church {
+            background: var(--church-brown);
+            color: white;
+            border: none;
+        }
+        
+        .btn-church:hover {
+            background: #A0522D;
+        }
+        
+        .admin-panel {
+            background: #f8f9fa;
+            border: 2px solid var(--church-brown);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        footer {
+            background: var(--church-brown);
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" id="siteTitle" href="#">Igreja Ministério</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-light btn-sm" onclick="toggleAdmin()">Admin</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section">
+        <div class="container">
+            <h1 id="heroTitle" class="display-4">Bem-vindo à Nossa Igreja</h1>
+            <p id="heroSubtitle" class="lead">Uma comunidade de fé, esperança e amor</p>
+            <button class="btn btn-light btn-lg">Saiba Mais</button>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 id="sobreTitle">Sobre Nossa Igreja</h2>
+                    <p id="sobreText">Uma comunidade dedicada ao serviço de Deus e ao amor ao próximo.</p>
+                    
+                    <div class="church-card card p-4 mt-4">
+                        <h5 id="missaoTitle">Missão</h5>
+                        <p id="missaoText">Levar a palavra de Deus a todos os corações.</p>
+                    </div>
+                    
+                    <div class="church-card card p-4">
+                        <h5 id="visaoTitle">Visão</h5>
+                        <p id="visaoText">Ser uma igreja relevante e acolhedora.</p>
+                    </div>
+                    
+                    <div class="church-card card p-4">
+                        <h5 id="valoresTitle">Valores</h5>
+                        <p id="valoresText">Fé, Esperança, Amor e Serviço.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <img src="https://via.placeholder.com/500x300" class="img-fluid rounded" alt="Igreja">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Section -->
+    <section id="servicos" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" id="servicosTitle">Nossos Serviços</h2>
+            <div class="row" id="servicosContainer">
+                <!-- Serviços serão carregados dinamicamente -->
+                <div class="col-md-4">
+                    <div class="church-card card p-4 text-center">
+                        <h5>Culto de Domingo</h5>
+                        <p>09:00 - Templo Principal</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="church-card card p-4 text-center">
+                        <h5>Estudo Bíblico</h5>
+                        <p>Quarta - 19:30</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="church-card card p-4 text-center">
+                        <h5>Grupo de Oração</h5>
+                        <p>Sexta - 20:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" id="contatoTitle">Entre em Contato</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="church-card card p-4">
+                        <h5>Informações de Contato</h5>
+                        <p><strong>Endereço:</strong> <span id="contatoEndereco">Rua da Igreja, 123</span></p>
+                        <p><strong>Telefone:</strong> <span id="contatoTelefone">(11) 9999-8888</span></p>
+                        <p><strong>Email:</strong> <span id="contatoEmail">contato@igreja.com</span></p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="church-card card p-4">
+                        <h5>Envie uma Mensagem</h5>
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Seu Nome">
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Seu Email">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="3" placeholder="Sua Mensagem"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-church">Enviar Mensagem</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Panel (Inicialmente Oculto) -->
+    <section id="adminSection" class="hidden">
+        <div class="container">
+            <div class="admin-panel">
+                <h2 class="text-center mb-4">Painel Administrativo</h2>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Editar Conteúdo do Site</h4>
+                        
+                        <div class="mb-3">
+                            <label>Título do Site:</label>
+                            <input type="text" id="adminTituloSite" class="form-control">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label>Título Hero:</label>
+                            <input type="text" id="adminHeroTitle" class="form-control">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label>Subtítulo Hero:</label>
+                            <input type="text" id="adminHeroSubtitle" class="form-control">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label>Título Sobre:</label>
+                            <input type="text" id="adminSobreTitle" class="form-control">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label>Texto Sobre:</label>
+                            <textarea id="adminSobreText" class="form-control" rows="3"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <h4>Missão, Visão e Valores</h4>
+                        
+                        <div class="mb-3">
+                            <label>Missão:</label>
+                            <textarea id="adminMissao" class="form-control" rows="2"></textarea>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label>Visão:</label>
+                            <textarea id="adminVisao" class="form-control" rows="2"></textarea>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label>Valores:</label>
+                            <textarea id="adminValores" class="form-control" rows="2"></textarea>
+                        </div>
+                        
+                        <h4 class="mt-4">Serviços</h4>
+                        <div id="adminServicosContainer">
+                            <!-- Serviços serão adicionados aqui -->
+                        </div>
+                        <button class="btn btn-success btn-sm mt-2" onclick="adicionarServicoAdmin()">+ Serviço</button>
+                        
+                        <h4 class="mt-4">Contato</h4>
+                        <div class="mb-3">
+                            <label>Endereço:</label>
+                            <input type="text" id="adminEndereco" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label>Telefone:</label>
+                            <input type="text" id="adminTelefone" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label>Email:</label>
+                            <input type="email" id="adminEmail" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <button class="btn btn-church btn-lg" onclick="salvarAlteracoes()">Salvar Alterações</button>
+                    <button class="btn btn-secondary btn-lg" onclick="toggleAdmin()">Fechar Admin</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p id="footerText">&copy; 2024 Igreja Ministério. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Sistema Integrado -->
+    <script>
+        // Sistema de Carregamento
+        document.addEventListener('DOMContentLoaded', function() {
+            carregarConteudo();
+            carregarAdminData();
+        });
+
+        // Carregar conteúdo do localStorage
+        function carregarConteudo() {
+            // Cabeçalho e Navegação
+            const tituloSite = localStorage.getItem('tituloSite');
+            if (tituloSite) {
+                document.getElementById('siteTitle').textContent = tituloSite;
+                document.title = tituloSite;
+            }
+
+            // Hero Section
+            const heroTitle = localStorage.getItem('heroTitle');
+            const heroSubtitle = localStorage.getItem('heroSubtitle');
+            if (heroTitle) document.getElementById('heroTitle').textContent = heroTitle;
+            if (heroSubtitle) document.getElementById('heroSubtitle').textContent = heroSubtitle;
+
+            // Sobre
+            const sobreTitle = localStorage.getItem('sobreTitle');
+            const sobreText = localStorage.getItem('sobreText');
+            if (sobreTitle) document.getElementById('sobreTitle').textContent = sobreTitle;
+            if (sobreText) document.getElementById('sobreText').textContent = sobreText;
+
+            // Missão, Visão, Valores
+            const missaoText = localStorage.getItem('missaoText');
+            const visaoText = localStorage.getItem('visaoText');
+            const valoresText = localStorage.getItem('valoresText');
+            if (missaoText) document.getElementById('missaoText').textContent = missaoText;
+            if (visaoText) document.getElementById('visaoText').textContent = visaoText;
+            if (valoresText) document.getElementById('valoresText').textContent = valoresText;
+
+            // Serviços
+            const servicos = JSON.parse(localStorage.getItem('servicos') || '[]');
+            if (servicos.length > 0) {
+                const container = document.getElementById('servicosContainer');
+                container.innerHTML = servicos.map(servico => `
+                    <div class="col-md-4">
+                        <div class="church-card card p-4 text-center">
+                            <h5>${servico.titulo}</h5>
+                            <p>${servico.descricao}</p>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Contato
+            const endereco = localStorage.getItem('endereco');
+            const telefone = localStorage.getItem('telefone');
+            const email = localStorage.getItem('email');
+            if (endereco) document.getElementById('contatoEndereco').textContent = endereco;
+            if (telefone) document.getElementById('contatoTelefone').textContent = telefone;
+            if (email) document.getElementById('contatoEmail').textContent = email;
+        }
+
+        // Carregar dados no admin
+        function carregarAdminData() {
+            document.getElementById('adminTituloSite').value = localStorage.getItem('tituloSite') || 'Igreja Ministério';
+            document.getElementById('adminHeroTitle').value = localStorage.getItem('heroTitle') || 'Bem-vindo à Nossa Igreja';
+            document.getElementById('adminHeroSubtitle').value = localStorage.getItem('heroSubtitle') || 'Uma comunidade de fé, esperança e amor';
+            document.getElementById('adminSobreTitle').value = localStorage.getItem('sobreTitle') || 'Sobre Nossa Igreja';
+            document.getElementById('adminSobreText').value = localStorage.getItem('sobreText') || 'Uma comunidade dedicada ao serviço de Deus e ao amor ao próximo.';
+            document.getElementById('adminMissao').value = localStorage.getItem('missaoText') || 'Levar a palavra de Deus a todos os corações.';
+            document.getElementById('adminVisao').value = localStorage.getItem('visaoText') || 'Ser uma igreja relevante e acolhedora.';
+            document.getElementById('adminValores').value = localStorage.getItem('valoresText') || 'Fé, Esperança, Amor e Serviço.';
+            document.getElementById('adminEndereco').value = localStorage.getItem('endereco') || 'Rua da Igreja, 123';
+            document.getElementById('adminTelefone').value = localStorage.getItem('telefone') || '(11) 9999-8888';
+            document.getElementById('adminEmail').value = localStorage.getItem('email') || 'contato@igreja.com';
+
+            carregarServicosAdmin();
+        }
+
+        // Carregar serviços no admin
+        function carregarServicosAdmin() {
+            const servicos = JSON.parse(localStorage.getItem('servicos') || '[]');
+            const container = document.getElementById('adminServicosContainer');
+            
+            if (servicos.length === 0) {
+                // Serviços padrão
+                const servicosPadrao = [
+                    { titulo: 'Culto de Domingo', descricao: '09:00 - Templo Principal' },
+                    { titulo: 'Estudo Bíblico', descricao: 'Quarta - 19:30' },
+                    { titulo: 'Grupo de Oração', descricao: 'Sexta - 20:00' }
+                ];
+                localStorage.setItem('servicos', JSON.stringify(servicosPadrao));
+                carregarServicosAdmin();
+                return;
+            }
+            
+            container.innerHTML = servicos.map((servico, index) => `
+                <div class="servico-admin-item border p-2 mb-2">
+                    <div class="row">
+                        <div class="col-5">
+                            <input type="text" class="form-control form-control-sm servico-titulo" 
+                                   value="${servico.titulo}" placeholder="Título do serviço">
+                        </div>
+                        <div class="col-5">
+                            <input type="text" class="form-control form-control-sm servico-descricao" 
+                                   value="${servico.descricao}" placeholder="Descrição">
+                        </div>
+                        <div class="col-2">
+                            <button class="btn btn-danger btn-sm" onclick="removerServicoAdmin(${index})">×</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Adicionar novo serviço no admin
+        function adicionarServicoAdmin() {
+            const servicos = JSON.parse(localStorage.getItem('servicos') || '[]');
+            servicos.push({ titulo: 'Novo Serviço', descricao: 'Descrição' });
+            localStorage.setItem('servicos', JSON.stringify(servicos));
+            carregarServicosAdmin();
+        }
+
+        // Remover serviço no admin
+        function removerServicoAdmin(index) {
+            const servicos = JSON.parse(localStorage.getItem('servicos') || '[]');
+            if (servicos.length > 1) {
+                servicos.splice(index, 1);
+                localStorage.setItem('servicos', JSON.stringify(servicos));
+                carregarServicosAdmin();
+            } else {
+                alert('É necessário ter pelo menos um serviço!');
+            }
+        }
+
+        // Salvar todas as alterações
+        function salvarAlteracoes() {
+            // Salvar textos básicos
+            localStorage.setItem('tituloSite', document.getElementById('adminTituloSite').value);
+            localStorage.setItem('heroTitle', document.getElementById('adminHeroTitle').value);
+            localStorage.setItem('heroSubtitle', document.getElementById('adminHeroSubtitle').value);
+            localStorage.setItem('sobreTitle', document.getElementById('adminSobreTitle').value);
+            localStorage.setItem('sobreText', document.getElementById('adminSobreText').value);
+            localStorage.setItem('missaoText', document.getElementById('adminMissao').value);
+            localStorage.setItem('visaoText', document.getElementById('adminVisao').value);
+            localStorage.setItem('valoresText', document.getElementById('adminValores').value);
+            localStorage.setItem('endereco', document.getElementById('adminEndereco').value);
+            localStorage.setItem('telefone', document.getElementById('adminTelefone').value);
+            localStorage.setItem('email', document.getElementById('adminEmail').value);
+
+            // Salvar serviços
+            const servicos = [];
+            document.querySelectorAll('.servico-admin-item').forEach(item => {
+                const titulo = item.querySelector('.servico-titulo').value;
+                const descricao = item.querySelector('.servico-descricao').value;
+                if (titulo.trim() !== '') {
+                    servicos.push({ titulo, descricao });
+                }
+            });
+            localStorage.setItem('servicos', JSON.stringify(servicos));
+
+            // Recarregar o site
+            carregarConteudo();
+            
+            alert('Alterações salvas com sucesso!');
+        }
+
+        // Alternar visibilidade do admin
+        function toggleAdmin() {
+            const adminSection = document.getElementById('adminSection');
+            if (adminSection.classList.contains('hidden')) {
+                adminSection.classList.remove('hidden');
+                carregarAdminData();
+            } else {
+                adminSection.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
