@@ -127,7 +127,7 @@
         .modal.show { visibility:visible; opacity:1; }
         .modal-card { background:white; padding:20px; border-radius:8px; width:360px; box-shadow:0 10px 30px rgba(0,0,0,.2); }
         .modal-card h3 { margin-bottom:10px; }
-        .admin-panel { position:fixed; right:20px; top:100px; width:420px; max-height:80vh; overflow:auto; background:white; border-radius:8px; padding:16px; box-shadow:0 10px 30px rgba(0,0,0,.2); z-index:1900; display:none; }
+        .admin-panel { position:fixed; right:20px; top:100px; width:500px; max-height:80vh; overflow:auto; background:white; border-radius:8px; padding:16px; box-shadow:0 10px 30px rgba(0,0,0,.2); z-index:1900; display:none; }
         .admin-panel.show { display:block; }
         .admin-panel h3 { margin-bottom:8px; }
         .admin-section { margin-bottom:18px; border-bottom:1px dashed #e6eef7; padding-bottom:12px; }
@@ -137,6 +137,97 @@
         .item-row input, .item-row textarea { flex:1; padding:8px 10px; border:1px solid #e2e8f0; border-radius:6px; font-size:.95rem; }
         .danger { background:#e53e3e; }
         .success { background:#38a169; }
+        
+        /* Estilos para as abas do admin */
+        .admin-tab { 
+            padding: 8px 16px; 
+            background: none; 
+            border: none; 
+            cursor: pointer; 
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        .admin-tab.active { 
+            border-bottom: 2px solid #3a6ea5; 
+            color: #3a6ea5;
+            font-weight: 600;
+        }
+        .admin-tab-content { 
+            display: none; 
+        }
+        .admin-tab-content.active { 
+            display: block; 
+        }
+
+        /* Estilos para a seção de emails */
+        .email-item { 
+            background: #f8fafc; 
+            padding: 12px; 
+            border-radius: 6px; 
+            margin-bottom: 8px; 
+            border-left: 4px solid #3a6ea5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .email-info { 
+            flex: 1; 
+        }
+        .email-actions { 
+            display: flex; 
+            gap: 6px; 
+        }
+        .email-name { 
+            font-weight: 600; 
+            color: #2d3748; 
+        }
+        .email-address { 
+            color: #718096; 
+            font-size: 0.9rem; 
+        }
+        .email-category { 
+            background: #e2e8f0; 
+            padding: 2px 8px; 
+            border-radius: 12px; 
+            font-size: 0.8rem; 
+            color: #4a5568;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .stat-card {
+            background: #f7fafc;
+            padding: 12px;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #3a6ea5;
+        }
+        .stat-label {
+            font-size: 0.8rem;
+            color: #718096;
+        }
+        .export-btn {
+            background: #38a169;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        .export-btn:hover {
+            background: #2f855a;
+        }
 
         /* tiny helpers */
         .muted { color:#718096; font-size:.95rem; }
@@ -369,17 +460,17 @@
     <div id="loginModal" class="modal" aria-hidden="true">
         <div class="modal-card">
             <h3>Login Administrativo</h3>
-            <p class="muted">Entre com usuário e senha</p>
+            <p class="muted">Entre com e-mail e senha</p>
             <div style="margin-top:10px;">
-                <label for="adminUser" class="muted">Usuário</label>
-                <input id="adminUser" type="text" placeholder="admin" style="width:100%; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0;">
+                <label for="adminEmail" class="muted">E-mail</label>
+                <input id="adminEmailInput" type="email" placeholder="seu@email.com" style="width:100%; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0;">
                 <label for="adminPass" class="muted" style="margin-top:8px; display:block;">Senha</label>
                 <input id="adminPass" type="password" placeholder="senha" style="width:100%; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0;">
                 <div style="display:flex; gap:8px; margin-top:12px; justify-content:flex-end;">
                     <button id="cancelLogin" class="btn btn-outline">Cancelar</button>
                     <button id="submitLogin" class="btn">Entrar</button>
                 </div>
-                <p class="small muted" style="margin-top:8px;">(credenciais padrão: <strong>admin</strong> / <strong>123456</strong>)</p>
+                <p class="small muted" style="margin-top:8px;">(credenciais padrão: <strong>admin@igreja.com</strong> / <strong>123456</strong>)</p>
             </div>
         </div>
     </div>
@@ -395,10 +486,11 @@
         </div>
 
         <!-- Tabs de navegação -->
-        <div style="display:flex; border-bottom:1px solid #e2e8f0; margin-bottom:15px;">
+        <div style="display:flex; border-bottom:1px solid #e2e8f0; margin-bottom:15px; flex-wrap: wrap;">
             <button class="admin-tab active" data-tab="content">Conteúdo</button>
             <button class="admin-tab" data-tab="events">Eventos</button>
             <button class="admin-tab" data-tab="sermons">Pregações</button>
+            <button class="admin-tab" data-tab="emails">Emails</button>
             <button class="admin-tab" data-tab="settings">Configurações</button>
         </div>
 
@@ -466,6 +558,63 @@
                 <h4>Pregações</h4>
                 <div id="adminSermonList"></div>
                 <button id="addSermonBtn" class="btn btn-outline" style="margin-top:8px;">+ Adicionar Pregação</button>
+            </div>
+        </div>
+
+        <!-- Emails -->
+        <div id="adminEmailsTab" class="admin-tab-content">
+            <div class="admin-section">
+                <h4>Gerenciar Emails</h4>
+                <p class="muted">Gerencie os emails coletados através do formulário de contato</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalEmails">0</div>
+                        <div class="stat-label">Total de Emails</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="newThisWeek">0</div>
+                        <div class="stat-label">Novos esta semana</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="subscribed">0</div>
+                        <div class="stat-label">Inscritos</div>
+                    </div>
+                </div>
+                
+                <div style="display:flex; gap:10px; margin-bottom:15px;">
+                    <input type="text" id="searchEmail" placeholder="Buscar email..." style="flex:1; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0;">
+                    <select id="filterCategory" style="padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0;">
+                        <option value="">Todas as categorias</option>
+                        <option value="membro">Membro</option>
+                        <option value="visitante">Visitante</option>
+                        <option value="voluntario">Voluntário</option>
+                        <option value="doador">Doador</option>
+                    </select>
+                </div>
+                
+                <div id="emailsList" style="max-height:300px; overflow-y:auto;">
+                    <!-- Lista de emails será renderizada aqui -->
+                </div>
+                
+                <button class="export-btn" onclick="exportEmails()">
+                    <i class="fas fa-download"></i> Exportar Emails (CSV)
+                </button>
+            </div>
+            
+            <div class="admin-section">
+                <h4>Adicionar Email Manualmente</h4>
+                <div style="display:flex; gap:10px;">
+                    <input type="text" id="newEmailName" placeholder="Nome" style="flex:1; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0;">
+                    <input type="email" id="newEmailAddress" placeholder="E-mail" style="flex:1; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0;">
+                    <select id="newEmailCategory" style="padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0;">
+                        <option value="membro">Membro</option>
+                        <option value="visitante">Visitante</option>
+                        <option value="voluntario">Voluntário</option>
+                        <option value="doador">Doador</option>
+                    </select>
+                    <button class="btn btn-outline" onclick="addManualEmail()">Adicionar</button>
+                </div>
             </div>
         </div>
 
@@ -544,10 +693,15 @@ Quarta-feira: 19h00 (Ensaio irmãs)
 Quinta-feira: 19h00 (Ensaio irmãos)
 Sexta-feira: 20h00 (Culto de ensino)
 Domingo: 09h00 (EBD)
-Domingo: 19h00 (Culto)`
+Domingo: 19h00 (Culto)`,
+            emails: [
+                { id: 1, name: "João Silva", email: "joao.silva@email.com", category: "membro", date: "2023-10-15", subscribed: true },
+                { id: 2, name: "Maria Santos", email: "maria.santos@email.com", category: "visitante", date: "2023-10-16", subscribed: true },
+                { id: 3, name: "Pedro Oliveira", email: "pedro.oliveira@email.com", category: "voluntario", date: "2023-10-17", subscribed: true }
+            ]
         };
 
-        const STORAGE_KEY = 'churchData_v2';
+        const STORAGE_KEY = 'churchData_v3';
         const AUTH_KEY = 'isAdmin_v1';
 
         /***********************
@@ -693,6 +847,186 @@ Domingo: 19h00 (Culto)`
         }
 
         /***********************
+         * Gerenciamento de Emails
+         ***********************/
+        function renderEmails() {
+            const data = loadData();
+            const emailsList = document.getElementById('emailsList');
+            const searchTerm = document.getElementById('searchEmail').value.toLowerCase();
+            const filterCategory = document.getElementById('filterCategory').value;
+            
+            // Filtrar emails
+            let filteredEmails = data.emails || [];
+            if (searchTerm) {
+                filteredEmails = filteredEmails.filter(email => 
+                    email.name.toLowerCase().includes(searchTerm) || 
+                    email.email.toLowerCase().includes(searchTerm)
+                );
+            }
+            if (filterCategory) {
+                filteredEmails = filteredEmails.filter(email => email.category === filterCategory);
+            }
+            
+            // Atualizar estatísticas
+            document.getElementById('totalEmails').textContent = data.emails ? data.emails.length : 0;
+            document.getElementById('newThisWeek').textContent = data.emails ? 
+                data.emails.filter(email => isThisWeek(new Date(email.date))).length : 0;
+            document.getElementById('subscribed').textContent = data.emails ? 
+                data.emails.filter(email => email.subscribed).length : 0;
+            
+            // Renderizar lista
+            emailsList.innerHTML = '';
+            if (filteredEmails.length === 0) {
+                emailsList.innerHTML = '<p class="muted" style="text-align:center; padding:20px;">Nenhum email encontrado</p>';
+                return;
+            }
+            
+            filteredEmails.forEach(email => {
+                const emailItem = document.createElement('div');
+                emailItem.className = 'email-item';
+                emailItem.innerHTML = `
+                    <div class="email-info">
+                        <div class="email-name">${email.name}</div>
+                        <div class="email-address">${email.email}</div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:10px;">
+                        <span class="email-category">${getCategoryLabel(email.category)}</span>
+                        <div class="email-actions">
+                            <button class="btn btn-outline" onclick="editEmail(${email.id})" style="padding:4px 8px; font-size:0.8rem;">Editar</button>
+                            <button class="btn btn-outline" onclick="deleteEmail(${email.id})" style="padding:4px 8px; font-size:0.8rem; background:#e53e3e; color:white;">Excluir</button>
+                        </div>
+                    </div>
+                `;
+                emailsList.appendChild(emailItem);
+            });
+        }
+
+        function getCategoryLabel(category) {
+            const labels = {
+                'membro': 'Membro',
+                'visitante': 'Visitante',
+                'voluntario': 'Voluntário',
+                'doador': 'Doador'
+            };
+            return labels[category] || category;
+        }
+
+        function isThisWeek(date) {
+            const today = new Date();
+            const startOfWeek = new Date(today.setDate(today.getDate() - today.getDay()));
+            const endOfWeek = new Date(today.setDate(today.getDate() + 6));
+            return date >= startOfWeek && date <= endOfWeek;
+        }
+
+        function addManualEmail() {
+            const name = document.getElementById('newEmailName').value.trim();
+            const email = document.getElementById('newEmailAddress').value.trim();
+            const category = document.getElementById('newEmailCategory').value;
+            
+            if (!name || !email) {
+                alert('Por favor, preencha nome e email.');
+                return;
+            }
+            
+            if (!validateEmail(email)) {
+                alert('Por favor, insira um email válido.');
+                return;
+            }
+            
+            const data = loadData();
+            if (!data.emails) data.emails = [];
+            
+            // Verificar se email já existe
+            if (data.emails.some(e => e.email === email)) {
+                alert('Este email já está cadastrado.');
+                return;
+            }
+            
+            const newEmail = {
+                id: uid(),
+                name: name,
+                email: email,
+                category: category,
+                date: new Date().toISOString().split('T')[0],
+                subscribed: true
+            };
+            
+            data.emails.push(newEmail);
+            saveData(data);
+            
+            // Limpar campos
+            document.getElementById('newEmailName').value = '';
+            document.getElementById('newEmailAddress').value = '';
+            
+            renderEmails();
+            alert('Email adicionado com sucesso!');
+        }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function deleteEmail(id) {
+            if (!confirm('Tem certeza que deseja excluir este email?')) return;
+            
+            const data = loadData();
+            data.emails = data.emails.filter(email => email.id !== id);
+            saveData(data);
+            renderEmails();
+            alert('Email excluído com sucesso!');
+        }
+
+        function editEmail(id) {
+            const data = loadData();
+            const email = data.emails.find(e => e.id === id);
+            
+            if (!email) return;
+            
+            const newName = prompt('Editar nome:', email.name);
+            if (newName === null) return;
+            
+            const newCategory = prompt('Editar categoria (membro, visitante, voluntario, doador):', email.category);
+            if (newCategory === null) return;
+            
+            email.name = newName.trim();
+            email.category = newCategory.trim();
+            
+            saveData(data);
+            renderEmails();
+            alert('Email atualizado com sucesso!');
+        }
+
+        function exportEmails() {
+            const data = loadData();
+            const emails = data.emails || [];
+            
+            if (emails.length === 0) {
+                alert('Não há emails para exportar.');
+                return;
+            }
+            
+            // Criar CSV
+            let csv = 'Nome,Email,Categoria,Data,Inscrito\n';
+            emails.forEach(email => {
+                csv += `"${email.name}","${email.email}","${getCategoryLabel(email.category)}","${email.date}","${email.subscribed ? 'Sim' : 'Não'}"\n`;
+            });
+            
+            // Criar arquivo para download
+            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            const url = URL.createObjectURL(blob);
+            link.setAttribute('href', url);
+            link.setAttribute('download', 'emails-igreja.csv');
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            alert(`Exportados ${emails.length} emails com sucesso!`);
+        }
+
+        /***********************
          * Admin panel: helpers para construir inputs dinamicamente
          ***********************/
         function buildMinistryAdminRow(min) {
@@ -789,6 +1123,9 @@ Domingo: 19h00 (Culto)`
             document.getElementById('adminEmail').value = data.email;
             document.getElementById('adminPix').value = data.pix;
             document.getElementById('adminServiceTimes').value = data.serviceTimes;
+            
+            // Emails
+            renderEmails();
         }
 
         function collectAdminFieldsAndSave() {
@@ -879,7 +1216,7 @@ Domingo: 19h00 (Culto)`
          * Login / autenticação (apenas front-end)
          ***********************/
         // credenciais de exemplo (troque para algo seguro se for usar)
-        const ADMIN_CREDENTIALS = { user: 'admin', pass: '123456' };
+        const ADMIN_CREDENTIALS = { email: 'admin@igreja.com', pass: '123456' };
 
         document.addEventListener('DOMContentLoaded', function() {
             // render inicial
@@ -908,8 +1245,35 @@ Domingo: 19h00 (Culto)`
             const contactForm = document.getElementById('contactForm');
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-                contactForm.reset();
+                const name = document.getElementById('contact_name').value.trim();
+                const email = document.getElementById('contact_email').value.trim();
+                const message = document.getElementById('contact_message').value.trim();
+                
+                if (name && email && message) {
+                    // Salvar email no banco de dados
+                    const data = loadData();
+                    if (!data.emails) data.emails = [];
+                    
+                    // Verificar se email já existe
+                    if (!data.emails.some(e => e.email === email)) {
+                        const newEmail = {
+                            id: uid(),
+                            name: name,
+                            email: email,
+                            category: 'visitante',
+                            date: new Date().toISOString().split('T')[0],
+                            subscribed: true
+                        };
+                        
+                        data.emails.push(newEmail);
+                        saveData(data);
+                    }
+                    
+                    alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+                    contactForm.reset();
+                } else {
+                    alert('Por favor, preencha todos os campos.');
+                }
             });
 
             // PIX copy
@@ -949,9 +1313,9 @@ Domingo: 19h00 (Culto)`
             });
 
             submitLogin.addEventListener('click', () => {
-                const user = document.getElementById('adminUser').value.trim();
+                const email = document.getElementById('adminEmailInput').value.trim();
                 const pass = document.getElementById('adminPass').value.trim();
-                if (user === ADMIN_CREDENTIALS.user && pass === ADMIN_CREDENTIALS.pass) {
+                if (email === ADMIN_CREDENTIALS.email && pass === ADMIN_CREDENTIALS.pass) {
                     setAdmin(true);
                     loginModal.classList.remove('show');
                     loginModal.setAttribute('aria-hidden', 'true');
@@ -959,15 +1323,15 @@ Domingo: 19h00 (Culto)`
                     populateAdminFields();
                     alert('Login bem-sucedido. Seja bem-vindo(a), administrador(a).');
                     // limpar campos
-                    document.getElementById('adminUser').value = '';
+                    document.getElementById('adminEmailInput').value = '';
                     document.getElementById('adminPass').value = '';
                 } else {
-                    alert('Credenciais inválidas. Verifique usuário e senha.');
+                    alert('Credenciais inválidas. Verifique e-mail e senha.');
                 }
             });
 
-            // fechar painel admin
-            closeAdminPanel.addEventListener('click', () => closeAdminPanel());
+            // CORREÇÃO: fechar painel admin
+            closeAdminPanel.addEventListener('click', closeAdminPanel);
 
             // logout
             logoutBtn.addEventListener('click', function() {
@@ -1025,8 +1389,17 @@ Domingo: 19h00 (Culto)`
                     // Mostra o conteúdo correspondente
                     const tabId = this.getAttribute('data-tab');
                     document.getElementById(`admin${tabId.charAt(0).toUpperCase() + tabId.slice(1)}Tab`).classList.add('active');
+                    
+                    // Se for a aba de emails, renderizar emails
+                    if (tabId === 'emails') {
+                        renderEmails();
+                    }
                 });
             });
+
+            // Eventos para busca e filtro de emails
+            document.getElementById('searchEmail').addEventListener('input', renderEmails);
+            document.getElementById('filterCategory').addEventListener('change', renderEmails);
 
             // Se admin já está autenticado, mostrar painel reduzido botão logout
             if (isAdmin()) {
