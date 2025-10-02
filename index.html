@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Igreja Assembleia - Gralha Azul</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igreja Assembleia de Deus - Gralha Azul</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -22,13 +22,16 @@
                         <li><a href="#sobre">Sobre</a></li>
                         <li><a href="#ministerios">Ministérios</a></li>
                         <li><a href="#eventos">Eventos</a></li>
+                        <li><a href="#pregações">Pregações</a></li>
                         <li><a href="#contato">Contato</a></li>
                         <li><a href="#doacao">Doações</a></li>
                     </ul>
                 </nav>
 
-                <div style="display:flex;align-items:center;">
-                    <button id="openAdminBtn" class="btn btn-outline admin-btn"><i class="fas fa-user-shield"></i> Admin</button>
+                <div class="header-actions">
+                    <button id="openAdminBtn" class="btn btn-outline admin-btn">
+                        <i class="fas fa-user-shield"></i> Admin
+                    </button>
                     <div class="mobile-menu-btn">
                         <i class="fas fa-bars"></i>
                     </div>
@@ -71,21 +74,20 @@
         </div>
     </section>
 
-    <!-- Features -->
-    <section id="ministerios" class="features">
+    <!-- Ministries Section -->
+    <section id="ministerios" class="ministries">
         <div class="container">
             <div class="section-title">
                 <h2 id="ministriesTitle">Nossos Ministérios</h2>
                 <p id="ministriesSubtitle">Conheça as diferentes formas de se conectar e servir em nossa comunidade</p>
             </div>
-            
-            <div id="ministriesGrid" class="features-grid">
-                <!-- Ministérios serão renderizados por JS -->
+            <div id="ministriesGrid" class="ministries-grid">
+                <!-- Ministérios serão renderizados por JavaScript -->
             </div>
         </div>
     </section>
 
-    <!-- Events (renderizado dinamicamente) -->
+    <!-- Events Section -->
     <section id="eventos" class="events">
         <div class="container">
             <div class="section-title">
@@ -93,25 +95,25 @@
                 <p id="eventsSubtitle">Participe de nossas celebrações e atividades</p>
             </div>
             <div id="eventsGrid" class="events-grid">
-                <!-- Eventos serão renderizados por JS -->
+                <!-- Eventos serão renderizados por JavaScript -->
             </div>
         </div>
     </section>
 
-    <!-- Sermons (renderizado dinamicamente) -->
-    <section class="sermons">
+    <!-- Sermons Section -->
+    <section id="pregações" class="sermons">
         <div class="container">
             <div class="section-title">
                 <h2 id="sermonsTitle">Pregações Recentes</h2>
                 <p id="sermonsSubtitle">Assista ou ouça nossas mensagens mais recentes</p>
             </div>
             <div id="sermonList" class="sermon-list">
-                <!-- Pregações renderizadas por JS -->
+                <!-- Pregações serão renderizadas por JavaScript -->
             </div>
         </div>
     </section>
 
-    <!-- Contact (dinâmico) -->
+    <!-- Contact Section -->
     <section id="contato" class="contact">
         <div class="container">
             <div class="section-title">
@@ -120,7 +122,7 @@
             </div>
             <div class="contact-content">
                 <div id="contactInfo" class="contact-info">
-                    <!-- info de contato renderizada por JS -->
+                    <!-- Informações de contato serão renderizadas por JavaScript -->
                 </div>
                 <div class="contact-form">
                     <h3>Envie uma Mensagem</h3>
@@ -176,10 +178,6 @@
                         <p><i class="fas fa-map-marker-alt"></i> Rua Nossa Senhora do Perpétuo Socorro, 322</p>
                     </div>
                 </div>
-                
-                <div class="donation-info">
-                    <p><strong>Observação:</strong> Todas as doações são utilizadas para a manutenção da igreja, projetos sociais e atividades comunitárias. Agradecemos sua contribuição!</p>
-                </div>
             </div>
         </div>
     </section>
@@ -225,42 +223,44 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; Igreja Assembleia de Deus - Araucária. Todos os direitos reservados.</p>
+                <p>&copy; 2024 Igreja Assembleia de Deus - Araucária. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
     <!-- Login Modal -->
-    <div id="loginModal" class="modal" aria-hidden="true">
-        <div class="modal-card">
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
             <h3>Login Administrativo</h3>
             <p class="muted">Entre com e-mail e senha</p>
-            <div style="margin-top:10px;">
-                <label for="adminEmail" class="muted">E-mail</label>
-                <input id="adminEmailInput" type="email" placeholder="seu@email.com" style="width:100%; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0;">
-                <label for="adminPass" class="muted" style="margin-top:8px; display:block;">Senha</label>
-                <input id="adminPass" type="password" placeholder="senha" style="width:100%; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0;">
-                <div style="display:flex; gap:8px; margin-top:12px; justify-content:flex-end;">
-                    <button id="cancelLogin" class="btn btn-outline">Cancelar</button>
-                    <button id="submitLogin" class="btn">Entrar</button>
-                </div>
-                <p class="small muted" style="margin-top:8px;">(credenciais padrão: <strong>admin@igreja.com</strong> / <strong>123456</strong>)</p>
+            <div class="form-group">
+                <label for="adminEmail">E-mail</label>
+                <input id="adminEmailInput" type="email" placeholder="seu@email.com">
             </div>
+            <div class="form-group">
+                <label for="adminPass">Senha</label>
+                <input id="adminPass" type="password" placeholder="sua senha">
+            </div>
+            <div class="modal-actions">
+                <button id="cancelLogin" class="btn btn-outline">Cancelar</button>
+                <button id="submitLogin" class="btn">Entrar</button>
+            </div>
+            <p class="small muted">Credenciais padrão: <strong>admin@igreja.com</strong> / <strong>123456</strong></p>
         </div>
     </div>
 
     <!-- Admin Panel -->
-    <aside id="adminPanel" class="admin-panel" aria-hidden="true">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+    <div id="adminPanel" class="admin-panel">
+        <div class="admin-header">
             <h3>Painel Administrativo</h3>
-            <div>
-                <button id="logoutBtn" class="btn btn-outline" style="margin-right:6px; display:none;">Sair</button>
+            <div class="admin-actions">
+                <button id="logoutBtn" class="btn btn-outline">Sair</button>
                 <button id="closeAdminPanel" class="btn btn-secondary">Fechar</button>
             </div>
         </div>
 
-        <!-- Tabs de navegação -->
-        <div style="display:flex; border-bottom:1px solid #e2e8f0; margin-bottom:15px; flex-wrap: wrap;">
+        <!-- Admin Tabs -->
+        <div class="admin-tabs">
             <button class="admin-tab active" data-tab="content">Conteúdo</button>
             <button class="admin-tab" data-tab="events">Eventos</button>
             <button class="admin-tab" data-tab="sermons">Pregações</button>
@@ -268,9 +268,32 @@
             <button class="admin-tab" data-tab="settings">Configurações</button>
         </div>
 
-        <!-- Conteúdo das abas (mantido igual ao original) -->
-        <!-- ... conteúdo das abas admin ... -->
-    </aside>
+        <!-- Tab Contents -->
+        <div class="admin-tab-content active" id="contentTab">
+            <!-- Conteúdo será preenchido por JavaScript -->
+        </div>
+
+        <div class="admin-tab-content" id="eventsTab">
+            <!-- Eventos serão preenchidos por JavaScript -->
+        </div>
+
+        <div class="admin-tab-content" id="sermonsTab">
+            <!-- Pregações serão preenchidas por JavaScript -->
+        </div>
+
+        <div class="admin-tab-content" id="emailsTab">
+            <!-- Emails serão preenchidos por JavaScript -->
+        </div>
+
+        <div class="admin-tab-content" id="settingsTab">
+            <!-- Configurações serão preenchidas por JavaScript -->
+        </div>
+
+        <div class="admin-footer">
+            <button id="saveAllBtn" class="btn btn-primary">Salvar Alterações</button>
+            <button id="resetDataBtn" class="btn btn-danger">Restaurar Padrão</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

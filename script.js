@@ -1,5 +1,5 @@
 /***********************
- * Dados iniciais (padrão)
+ * DADOS INICIAIS (PADRÃO)
  ***********************/
 const defaultData = {
     heroTitle: "Igreja Assembleia de Deus - Gralha Azul",
@@ -15,22 +15,109 @@ const defaultData = {
     ministriesTitle: "Nossos Ministérios",
     ministriesSubtitle: "Conheça as diferentes formas de se conectar e servir em nossa comunidade",
     ministries: [
-        { id: 1, name: "Ministério de Acolhimento", description: "Voltado para receber novos membros e integrá-los à comunidade.", icon: "fas fa-hands-helping" },
-        { id: 2, name: "Ministério de Louvor", description: "Responsável pela música e adoração em nossos cultos.", icon: "fas fa-music" },
-        { id: 3, name: "Ministério Social", description: "Desenvolve projetos de assistência e apoio à comunidade local.", icon: "fas fa-hands" }
+        { 
+            id: 1, 
+            name: "Ministério de Acolhimento", 
+            description: "Voltado para receber novos membros e integrá-los à comunidade.", 
+            icon: "fas fa-hands-helping" 
+        },
+        { 
+            id: 2, 
+            name: "Ministério de Louvor", 
+            description: "Responsável pela música e adoração em nossos cultos.", 
+            icon: "fas fa-music" 
+        },
+        { 
+            id: 3, 
+            name: "Ministério Social", 
+            description: "Desenvolve projetos de assistência e apoio à comunidade local.", 
+            icon: "fas fa-hands" 
+        },
+        { 
+            id: 4, 
+            name: "Ministério Infantil", 
+            description: "Ensino bíblico e atividades para crianças de todas as idades.", 
+            icon: "fas fa-child" 
+        },
+        { 
+            id: 5, 
+            name: "Ministério de Jovens", 
+            description: "Atividades e estudos voltados para a juventude cristã.", 
+            icon: "fas fa-users" 
+        },
+        { 
+            id: 6, 
+            name: "Ministério de Oração", 
+            description: "Grupo dedicado à intercessão e vida de oração.", 
+            icon: "fas fa-pray" 
+        }
     ],
     eventsTitle: "Próximos Eventos",
     eventsSubtitle: "Participe de nossas celebrações e atividades",
     events: [
-        { id: 1, day: "20", month: "Set", title: "Culto da Unaadar", time: "19:00 - 21:30", location: "Igreja Assembleia Sede" },
-        { id: 2, day: "03 a 05", month: "Out", title: "Congresso Unaadar", time: "19:00 - 21:30", location: "Igreja Assembleia Sede" },
-        { id: 3, day: "12", month: "Out", title: "Congresso Kids", time: "09:00 - 16:00", location: "Igreja Assembleia Gralha Azul" }
+        { 
+            id: 1, 
+            day: "20", 
+            month: "Set", 
+            title: "Culto da Unaadar", 
+            time: "19:00 - 21:30", 
+            location: "Igreja Assembleia Sede" 
+        },
+        { 
+            id: 2, 
+            day: "03 a 05", 
+            month: "Out", 
+            title: "Congresso Unaadar", 
+            time: "19:00 - 21:30", 
+            location: "Igreja Assembleia Sede" 
+        },
+        { 
+            id: 3, 
+            day: "12", 
+            month: "Out", 
+            title: "Congresso Kids", 
+            time: "09:00 - 16:00", 
+            location: "Igreja Assembleia Gralha Azul" 
+        },
+        { 
+            id: 4, 
+            day: "25", 
+            month: "Out", 
+            title: "Encontro de Mulheres", 
+            time: "14:00 - 17:00", 
+            location: "Salão Social" 
+        }
     ],
     sermonsTitle: "Pregações Recentes",
     sermonsSubtitle: "Assista ou ouça nossas mensagens mais recentes",
     sermons: [
-        { id: 1, title: "A Fé em Tempos de Incerteza", pastor: "Pastor João Silva", date: "18 de Junho, 2023", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80", url: "https://youtu.be/1OSIXF3MA7k?feature=shared", description: "Uma mensagem sobre como manter a fé em meio às adversidades da vida." },
-        { id: 2, title: "O Poder da Oração", pastor: "Pastora Maria Santos", date: "11 de Junho, 2023", img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80", url: "https://youtu.be/1OSIXF3MA7k?feature=shared", description: "Entenda como a oração pode transformar sua vida e suas circunstâncias." }
+        { 
+            id: 1, 
+            title: "A Fé em Tempos de Incerteza", 
+            pastor: "Pastor João Silva", 
+            date: "18 de Junho, 2023", 
+            img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80", 
+            url: "https://youtu.be/1OSIXF3MA7k?feature=shared", 
+            description: "Uma mensagem sobre como manter a fé em meio às adversidades da vida." 
+        },
+        { 
+            id: 2, 
+            title: "O Poder da Oração", 
+            pastor: "Pastora Maria Santos", 
+            date: "11 de Junho, 2023", 
+            img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80", 
+            url: "https://youtu.be/1OSIXF3MA7k?feature=shared", 
+            description: "Entenda como a oração pode transformar sua vida e suas circunstâncias." 
+        },
+        { 
+            id: 3, 
+            title: "Vivendo em Comunhão", 
+            pastor: "Pastor Carlos Oliveira", 
+            date: "04 de Junho, 2023", 
+            img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80", 
+            url: "https://youtu.be/1OSIXF3MA7k?feature=shared", 
+            description: "A importância da vida em comunidade para o crescimento espiritual." 
+        }
     ],
     contactTitle: "Entre em Contato",
     contactSubtitle: "Estamos à disposição para responder suas perguntas",
@@ -47,17 +134,53 @@ Sexta-feira: 20h00 (Culto de ensino)
 Domingo: 09h00 (EBD)
 Domingo: 19h00 (Culto)`,
     emails: [
-        { id: 1, name: "João Silva", email: "joao.silva@email.com", category: "membro", date: "2023-10-15", subscribed: true },
-        { id: 2, name: "Maria Santos", email: "maria.santos@email.com", category: "visitante", date: "2023-10-16", subscribed: true },
-        { id: 3, name: "Pedro Oliveira", email: "pedro.oliveira@email.com", category: "voluntario", date: "2023-10-17", subscribed: true }
+        { 
+            id: 1, 
+            name: "João Silva", 
+            email: "joao.silva@email.com", 
+            category: "membro", 
+            date: "2023-10-15", 
+            subscribed: true 
+        },
+        { 
+            id: 2, 
+            name: "Maria Santos", 
+            email: "maria.santos@email.com", 
+            category: "visitante", 
+            date: "2023-10-16", 
+            subscribed: true 
+        },
+        { 
+            id: 3, 
+            name: "Pedro Oliveira", 
+            email: "pedro.oliveira@email.com", 
+            category: "voluntario", 
+            date: "2023-10-17", 
+            subscribed: true 
+        },
+        { 
+            id: 4, 
+            name: "Ana Costa", 
+            email: "ana.costa@email.com", 
+            category: "doador", 
+            date: "2023-10-18", 
+            subscribed: true 
+        }
     ]
 };
 
-const STORAGE_KEY = 'churchData_v3';
+/***********************
+ * CONSTANTES E CONFIGURAÇÕES
+ ***********************/
+const STORAGE_KEY = 'churchData_v4';
 const AUTH_KEY = 'isAdmin_v1';
+const ADMIN_CREDENTIALS = { 
+    email: 'admin@igreja.com', 
+    pass: '123456' 
+};
 
 /***********************
- * Utilitários
+ * FUNÇÕES UTILITÁRIAS
  ***********************/
 function loadData() {
     const raw = localStorage.getItem(STORAGE_KEY);
@@ -68,7 +191,7 @@ function loadData() {
     try {
         return JSON.parse(raw);
     } catch (e) {
-        console.error('Erro ao parsear dados, restaurando padrão.', e);
+        console.error('Erro ao carregar dados, restaurando padrão.', e);
         localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultData));
         return JSON.parse(JSON.stringify(defaultData));
     }
@@ -90,8 +213,24 @@ function uid() {
     return Math.floor(Math.random() * 1000000);
 }
 
+function copyPixKey() {
+    const pixKey = document.getElementById('pixKey').textContent;
+    navigator.clipboard.writeText(pixKey).then(() => {
+        alert('Chave PIX copiada para a área de transferência!');
+    }).catch(() => {
+        // Fallback para navegadores mais antigos
+        const textArea = document.createElement('textarea');
+        textArea.value = pixKey;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        alert('Chave PIX copiada para a área de transferência!');
+    });
+}
+
 /***********************
- * Renderizadores
+ * RENDERIZAÇÃO DO CONTEÚDO
  ***********************/
 function renderAll() {
     const data = loadData();
@@ -129,14 +268,17 @@ function renderAll() {
 function renderMinistries(ministries) {
     const grid = document.getElementById('ministriesGrid');
     grid.innerHTML = '';
-    ministries.forEach(min => {
+    
+    ministries.forEach(ministry => {
         const card = document.createElement('div');
-        card.className = 'feature-card';
+        card.className = 'ministry-card';
         card.innerHTML = `
-            <div class="feature-icon"><i class="${min.icon}"></i></div>
-            <div class="feature-content">
-                <h3>${min.name}</h3>
-                <p>${min.description}</p>
+            <div class="ministry-icon">
+                <i class="${ministry.icon}"></i>
+            </div>
+            <div class="ministry-content">
+                <h3>${ministry.name}</h3>
+                <p>${ministry.description}</p>
             </div>
         `;
         grid.appendChild(card);
@@ -146,18 +288,19 @@ function renderMinistries(ministries) {
 function renderEvents(events) {
     const grid = document.getElementById('eventsGrid');
     grid.innerHTML = '';
-    events.forEach(ev => {
+    
+    events.forEach(event => {
         const card = document.createElement('div');
         card.className = 'event-card';
         card.innerHTML = `
             <div class="event-date">
-                <h3>${ev.day}</h3>
-                <span>${ev.month}</span>
+                <h3>${event.day}</h3>
+                <span>${event.month}</span>
             </div>
             <div class="event-content">
-                <h3>${ev.title}</h3>
-                <p><i class="far fa-clock"></i> ${ev.time || ''}</p>
-                <p><i class="fas fa-map-marker-alt"></i> ${ev.location || ''}</p>
+                <h3>${event.title}</h3>
+                <p><i class="far fa-clock"></i> ${event.time || ''}</p>
+                <p><i class="fas fa-map-marker-alt"></i> ${event.location || ''}</p>
             </div>
         `;
         grid.appendChild(card);
@@ -167,17 +310,23 @@ function renderEvents(events) {
 function renderSermons(sermons) {
     const list = document.getElementById('sermonList');
     list.innerHTML = '';
-    sermons.forEach(s => {
+    
+    sermons.forEach(sermon => {
         const card = document.createElement('div');
         card.className = 'sermon-card';
         card.innerHTML = `
-            <img src="${s.img}" alt="${s.title}" class="sermon-img">
+            <img src="${sermon.img}" alt="${sermon.title}" class="sermon-img">
             <div class="sermon-content">
-                <h3>${s.title}</h3>
-                <p><strong>${s.pastor}</strong> | ${s.date}</p>
-                <p>${s.description}</p>
+                <h3>${sermon.title}</h3>
+                <p><strong>${sermon.pastor}</strong> | ${sermon.date}</p>
+                <p>${sermon.description}</p>
                 <div class="sermon-actions">
-                    <a href="${s.url || '#'}" target="_blank" class="btn"><i class="fas fa-play"></i> Assistir</a>
+                    <a href="${sermon.url || '#'}" target="_blank" class="btn">
+                        <i class="fas fa-play"></i> Assistir
+                    </a>
+                    <a href="${sermon.url || '#'}" target="_blank" class="btn btn-outline">
+                        <i class="fas fa-download"></i> Download
+                    </a>
                 </div>
             </div>
         `;
@@ -186,20 +335,20 @@ function renderSermons(sermons) {
 }
 
 function renderContact(data) {
-    const el = document.getElementById('contactInfo');
-    el.innerHTML = `
+    const contactInfo = document.getElementById('contactInfo');
+    contactInfo.innerHTML = `
         <h3>Informações de Contato</h3>
         <p><i class="fas fa-map-marker-alt"></i> ${data.address}</p>
         <p><i class="fas fa-phone"></i> ${data.phone}</p>
         <p><i class="fas fa-envelope"></i> ${data.email}</p>
         
-        <h3>Horários de Culto</h3>
-        <div>${data.serviceTimes.replace(/\n/g, '<br>')}</div>
+        <h3 style="margin-top: 30px;">Horários de Culto</h3>
+        <div style="white-space: pre-line;">${data.serviceTimes}</div>
     `;
 }
 
 /***********************
- * Gerenciamento de Emails
+ * SISTEMA DE EMAILS
  ***********************/
 function renderEmails() {
     const data = loadData();
@@ -220,16 +369,13 @@ function renderEmails() {
     }
     
     // Atualizar estatísticas
-    document.getElementById('totalEmails').textContent = data.emails ? data.emails.length : 0;
-    document.getElementById('newThisWeek').textContent = data.emails ? 
-        data.emails.filter(email => isThisWeek(new Date(email.date))).length : 0;
-    document.getElementById('subscribed').textContent = data.emails ? 
-        data.emails.filter(email => email.subscribed).length : 0;
+    updateEmailStats(data.emails || []);
     
     // Renderizar lista
     emailsList.innerHTML = '';
+    
     if (filteredEmails.length === 0) {
-        emailsList.innerHTML = '<p class="muted" style="text-align:center; padding:20px;">Nenhum email encontrado</p>';
+        emailsList.innerHTML = '<p class="muted text-center">Nenhum email encontrado</p>';
         return;
     }
     
@@ -244,13 +390,23 @@ function renderEmails() {
             <div style="display:flex; align-items:center; gap:10px;">
                 <span class="email-category">${getCategoryLabel(email.category)}</span>
                 <div class="email-actions">
-                    <button class="btn btn-outline" onclick="editEmail(${email.id})" style="padding:4px 8px; font-size:0.8rem;">Editar</button>
-                    <button class="btn btn-outline" onclick="deleteEmail(${email.id})" style="padding:4px 8px; font-size:0.8rem; background:#e53e3e; color:white;">Excluir</button>
+                    <button class="btn btn-outline" onclick="editEmail(${email.id})">Editar</button>
+                    <button class="btn btn-danger" onclick="deleteEmail(${email.id})">Excluir</button>
                 </div>
             </div>
         `;
         emailsList.appendChild(emailItem);
     });
+}
+
+function updateEmailStats(emails) {
+    const totalEmails = emails.length;
+    const newThisWeek = emails.filter(email => isThisWeek(new Date(email.date))).length;
+    const subscribed = emails.filter(email => email.subscribed).length;
+    
+    document.getElementById('totalEmails').textContent = totalEmails;
+    document.getElementById('newThisWeek').textContent = newThisWeek;
+    document.getElementById('subscribed').textContent = subscribed;
 }
 
 function getCategoryLabel(category) {
@@ -379,52 +535,8 @@ function exportEmails() {
 }
 
 /***********************
- * Admin panel: helpers para construir inputs dinamicamente
+ * PAINEL ADMINISTRATIVO
  ***********************/
-function buildMinistryAdminRow(min) {
-    const wrap = document.createElement('div');
-    wrap.className = 'item-row';
-    wrap.innerHTML = `
-        <input type="text" data-field="name" value="${min.name}" placeholder="Nome do ministério">
-        <input type="text" data-field="description" value="${min.description}" placeholder="Descrição">
-        <input type="text" data-field="icon" value="${min.icon}" placeholder="Ícone (FontAwesome)">
-        <button class="btn btn-outline btn-remove">Remover</button>
-    `;
-    wrap.querySelector('.btn-remove').addEventListener('click', () => wrap.remove());
-    return wrap;
-}
-
-function buildEventAdminRow(ev) {
-    const wrap = document.createElement('div');
-    wrap.className = 'item-row';
-    wrap.innerHTML = `
-        <input type="text" data-field="day" value="${ev.day}" placeholder="Dia">
-        <input type="text" data-field="month" value="${ev.month}" placeholder="Mês">
-        <input type="text" data-field="title" value="${ev.title}" placeholder="Título">
-        <input type="text" data-field="time" value="${ev.time || ''}" placeholder="Horário">
-        <input type="text" data-field="location" value="${ev.location || ''}" placeholder="Local">
-        <button class="btn btn-outline btn-remove">Remover</button>
-    `;
-    wrap.querySelector('.btn-remove').addEventListener('click', () => wrap.remove());
-    return wrap;
-}
-
-function buildSermonAdminRow(s) {
-    const wrap = document.createElement('div');
-    wrap.className = 'item-row';
-    wrap.innerHTML = `
-        <input type="text" data-field="title" value="${s.title}" placeholder="Título">
-        <input type="text" data-field="pastor" value="${s.pastor}" placeholder="Pastor">
-        <input type="text" data-field="date" value="${s.date}" placeholder="Data">
-        <input type="text" data-field="img" value="${s.img}" placeholder="URL da imagem">
-        <input type="text" data-field="url" value="${s.url}" placeholder="URL do vídeo">
-        <input type="text" data-field="description" value="${s.description}" placeholder="Descrição">
-        <button class="btn btn-outline btn-remove">Remover</button>
-    `;
-    wrap.querySelector('.btn-remove').addEventListener('click', () => wrap.remove());
-    return wrap;
-}
-
 function openAdminPanel() {
     document.getElementById('adminPanel').classList.add('show');
     document.getElementById('logoutBtn').style.display = 'inline-block';
@@ -438,7 +550,7 @@ function closeAdminPanel() {
 function populateAdminFields() {
     const data = loadData();
     
-    // Conteúdo textual
+    // Preencher campos do formulário
     document.getElementById('adminHeroTitle').value = data.heroTitle;
     document.getElementById('adminAddress').value = data.address;
     document.getElementById('adminAboutTitle').value = data.aboutTitle;
@@ -454,164 +566,233 @@ function populateAdminFields() {
     document.getElementById('adminPixDescription').value = data.pixDescription;
     document.getElementById('adminPresentialDonationText').value = data.presentialDonationText;
     
-    // Ministérios
-    const adminMinistriesList = document.getElementById('adminMinistriesList');
-    adminMinistriesList.innerHTML = '';
-    data.ministries.forEach(min => adminMinistriesList.appendChild(buildMinistryAdminRow(min)));
+    // Preencher listas dinâmicas
+    populateAdminMinistries(data.ministries);
+    populateAdminEvents(data.events);
+    populateAdminSermons(data.sermons);
+    populateAdminSettings(data);
     
-    // Eventos
-    const adminEventsList = document.getElementById('adminEventsList');
-    adminEventsList.innerHTML = '';
-    data.events.forEach(ev => adminEventsList.appendChild(buildEventAdminRow(ev)));
+    // Renderizar emails
+    renderEmails();
+}
+
+function populateAdminMinistries(ministries) {
+    const container = document.getElementById('adminMinistriesList');
+    container.innerHTML = '';
     
-    // Pregações
-    const adminSermonList = document.getElementById('adminSermonList');
-    adminSermonList.innerHTML = '';
-    data.sermons.forEach(s => adminSermonList.appendChild(buildSermonAdminRow(s)));
+    ministries.forEach(ministry => {
+        const row = createMinistryRow(ministry);
+        container.appendChild(row);
+    });
+}
+
+function createMinistryRow(ministry) {
+    const row = document.createElement('div');
+    row.className = 'admin-item-row';
+    row.innerHTML = `
+        <input type="text" value="${ministry.name}" placeholder="Nome do ministério" class="ministry-name">
+        <input type="text" value="${ministry.description}" placeholder="Descrição" class="ministry-desc">
+        <input type="text" value="${ministry.icon}" placeholder="Ícone FontAwesome" class="ministry-icon">
+        <button class="btn btn-danger remove-ministry">Remover</button>
+    `;
     
-    // Configurações
+    row.querySelector('.remove-ministry').addEventListener('click', () => {
+        row.remove();
+    });
+    
+    return row;
+}
+
+function populateAdminEvents(events) {
+    const container = document.getElementById('adminEventsList');
+    container.innerHTML = '';
+    
+    events.forEach(event => {
+        const row = createEventRow(event);
+        container.appendChild(row);
+    });
+}
+
+function createEventRow(event) {
+    const row = document.createElement('div');
+    row.className = 'admin-item-row';
+    row.innerHTML = `
+        <input type="text" value="${event.day}" placeholder="Dia" class="event-day">
+        <input type="text" value="${event.month}" placeholder="Mês" class="event-month">
+        <input type="text" value="${event.title}" placeholder="Título" class="event-title">
+        <input type="text" value="${event.time || ''}" placeholder="Horário" class="event-time">
+        <input type="text" value="${event.location || ''}" placeholder="Local" class="event-location">
+        <button class="btn btn-danger remove-event">Remover</button>
+    `;
+    
+    row.querySelector('.remove-event').addEventListener('click', () => {
+        row.remove();
+    });
+    
+    return row;
+}
+
+function populateAdminSermons(sermons) {
+    const container = document.getElementById('adminSermonsList');
+    container.innerHTML = '';
+    
+    sermons.forEach(sermon => {
+        const row = createSermonRow(sermon);
+        container.appendChild(row);
+    });
+}
+
+function createSermonRow(sermon) {
+    const row = document.createElement('div');
+    row.className = 'admin-item-row';
+    row.innerHTML = `
+        <input type="text" value="${sermon.title}" placeholder="Título" class="sermon-title">
+        <input type="text" value="${sermon.pastor}" placeholder="Pastor" class="sermon-pastor">
+        <input type="text" value="${sermon.date}" placeholder="Data" class="sermon-date">
+        <input type="text" value="${sermon.img}" placeholder="URL da imagem" class="sermon-img">
+        <input type="text" value="${sermon.url}" placeholder="URL do vídeo" class="sermon-url">
+        <input type="text" value="${sermon.description}" placeholder="Descrição" class="sermon-desc">
+        <button class="btn btn-danger remove-sermon">Remover</button>
+    `;
+    
+    row.querySelector('.remove-sermon').addEventListener('click', () => {
+        row.remove();
+    });
+    
+    return row;
+}
+
+function populateAdminSettings(data) {
     document.getElementById('adminContactAddress').value = data.address;
     document.getElementById('adminPhone').value = data.phone;
     document.getElementById('adminEmail').value = data.email;
     document.getElementById('adminPix').value = data.pix;
     document.getElementById('adminServiceTimes').value = data.serviceTimes;
-    
-    // Emails
-    renderEmails();
 }
 
-function collectAdminFieldsAndSave() {
+function collectAdminData() {
     const data = loadData();
-
-    // Coletar conteúdo textual
-    data.heroTitle = document.getElementById('adminHeroTitle').value || data.heroTitle;
-    data.address = document.getElementById('adminAddress').value || data.address;
-    data.aboutTitle = document.getElementById('adminAboutTitle').value || data.aboutTitle;
-    data.aboutSubtitle = document.getElementById('adminAboutSubtitle').value || data.aboutSubtitle;
-    data.aboutText1 = document.getElementById('adminAboutText1').value || data.aboutText1;
-    data.aboutText2 = document.getElementById('adminAboutText2').value || data.aboutText2;
-    data.aboutText3 = document.getElementById('adminAboutText3').value || data.aboutText3;
-    data.ministriesTitle = document.getElementById('adminMinistriesTitle').value || data.ministriesTitle;
-    data.ministriesSubtitle = document.getElementById('adminMinistriesSubtitle').value || data.ministriesSubtitle;
-    data.donationTitle = document.getElementById('adminDonationTitle').value || data.donationTitle;
-    data.donationSubtitle = document.getElementById('adminDonationSubtitle').value || data.donationSubtitle;
-    data.donationText = document.getElementById('adminDonationText').value || data.donationText;
-    data.pixDescription = document.getElementById('adminPixDescription').value || data.pixDescription;
-    data.presentialDonationText = document.getElementById('adminPresentialDonationText').value || data.presentialDonationText;
+    
+    // Coletar dados básicos
+    data.heroTitle = document.getElementById('adminHeroTitle').value;
+    data.address = document.getElementById('adminAddress').value;
+    data.aboutTitle = document.getElementById('adminAboutTitle').value;
+    data.aboutSubtitle = document.getElementById('adminAboutSubtitle').value;
+    data.aboutText1 = document.getElementById('adminAboutText1').value;
+    data.aboutText2 = document.getElementById('adminAboutText2').value;
+    data.aboutText3 = document.getElementById('adminAboutText3').value;
+    data.ministriesTitle = document.getElementById('adminMinistriesTitle').value;
+    data.ministriesSubtitle = document.getElementById('adminMinistriesSubtitle').value;
+    data.donationTitle = document.getElementById('adminDonationTitle').value;
+    data.donationSubtitle = document.getElementById('adminDonationSubtitle').value;
+    data.donationText = document.getElementById('adminDonationText').value;
+    data.pixDescription = document.getElementById('adminPixDescription').value;
+    data.presentialDonationText = document.getElementById('adminPresentialDonationText').value;
     
     // Coletar ministérios
-    const ministryNodes = Array.from(document.getElementById('adminMinistriesList').querySelectorAll('.item-row'));
-    const ministries = ministryNodes.map((node, idx) => {
-        return {
-            id: data.ministries[idx] ? data.ministries[idx].id || uid() : uid(),
-            name: node.querySelector('[data-field="name"]').value || '',
-            description: node.querySelector('[data-field="description"]').value || '',
-            icon: node.querySelector('[data-field="icon"]').value || 'fas fa-hands-helping'
-        };
-    });
+    data.ministries = Array.from(document.querySelectorAll('#adminMinistriesList .admin-item-row')).map((row, index) => ({
+        id: data.ministries[index] ? data.ministries[index].id : uid(),
+        name: row.querySelector('.ministry-name').value,
+        description: row.querySelector('.ministry-desc').value,
+        icon: row.querySelector('.ministry-icon').value
+    }));
     
     // Coletar eventos
-    const eventNodes = Array.from(document.getElementById('adminEventsList').querySelectorAll('.item-row'));
-    const events = eventNodes.map((node, idx) => {
-        return {
-            id: data.events[idx] ? data.events[idx].id || uid() : uid(),
-            day: node.querySelector('[data-field="day"]').value || '',
-            month: node.querySelector('[data-field="month"]').value || '',
-            title: node.querySelector('[data-field="title"]').value || '',
-            time: node.querySelector('[data-field="time"]').value || '',
-            location: node.querySelector('[data-field="location"]').value || ''
-        };
-    });
-
+    data.events = Array.from(document.querySelectorAll('#adminEventsList .admin-item-row')).map((row, index) => ({
+        id: data.events[index] ? data.events[index].id : uid(),
+        day: row.querySelector('.event-day').value,
+        month: row.querySelector('.event-month').value,
+        title: row.querySelector('.event-title').value,
+        time: row.querySelector('.event-time').value,
+        location: row.querySelector('.event-location').value
+    }));
+    
     // Coletar pregações
-    const sermonNodes = Array.from(document.getElementById('adminSermonList').querySelectorAll('.item-row'));
-    const sermons = sermonNodes.map((node, idx) => {
-        return {
-            id: data.sermons[idx] ? data.sermons[idx].id || uid() : uid(),
-            title: node.querySelector('[data-field="title"]').value || '',
-            pastor: node.querySelector('[data-field="pastor"]').value || '',
-            date: node.querySelector('[data-field="date"]').value || '',
-            img: node.querySelector('[data-field="img"]').value || '',
-            url: node.querySelector('[data-field="url"]').value || '',
-            description: node.querySelector('[data-field="description"]').value || ''
-        };
-    });
-
+    data.sermons = Array.from(document.querySelectorAll('#adminSermonsList .admin-item-row')).map((row, index) => ({
+        id: data.sermons[index] ? data.sermons[index].id : uid(),
+        title: row.querySelector('.sermon-title').value,
+        pastor: row.querySelector('.sermon-pastor').value,
+        date: row.querySelector('.sermon-date').value,
+        img: row.querySelector('.sermon-img').value,
+        url: row.querySelector('.sermon-url').value,
+        description: row.querySelector('.sermon-desc').value
+    }));
+    
     // Coletar configurações
-    data.address = document.getElementById('adminContactAddress').value || data.address;
-    data.phone = document.getElementById('adminPhone').value || data.phone;
-    data.email = document.getElementById('adminEmail').value || data.email;
-    data.pix = document.getElementById('adminPix').value || data.pix;
-    data.serviceTimes = document.getElementById('adminServiceTimes').value || data.serviceTimes;
+    data.address = document.getElementById('adminContactAddress').value;
+    data.phone = document.getElementById('adminPhone').value;
+    data.email = document.getElementById('adminEmail').value;
+    data.pix = document.getElementById('adminPix').value;
+    data.serviceTimes = document.getElementById('adminServiceTimes').value;
+    
+    return data;
+}
 
-    // Atualizar dados
-    data.ministries = ministries;
-    data.events = events;
-    data.sermons = sermons;
-
+function saveAdminData() {
+    const data = collectAdminData();
     saveData(data);
     renderAll();
     alert('Alterações salvas com sucesso!');
 }
 
 function resetToDefault() {
-    if (!confirm('Restaurar os dados padrões? Essa ação sobrescreverá as alterações atuais.')) return;
+    if (!confirm('Tem certeza que deseja restaurar os dados padrão? Todas as alterações serão perdidas.')) return;
+    
     localStorage.removeItem(STORAGE_KEY);
     localStorage.removeItem(AUTH_KEY);
+    
     const data = loadData();
     renderAll();
     populateAdminFields();
-    alert('Dados restaurados para o padrão.');
+    
+    alert('Dados restaurados para o padrão!');
 }
 
 /***********************
- * Login / autenticação (apenas front-end)
- ***********************/
-// credenciais de exemplo (troque para algo seguro se for usar)
-const ADMIN_CREDENTIALS = { email: 'admin@igreja.com', pass: '123456' };
-
-// PIX copy
-window.copyPixKey = function() {
-    const pixKey = document.getElementById('pixKey').textContent;
-    const textArea = document.createElement('textarea');
-    textArea.value = pixKey;
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textArea);
-    alert('Chave PIX copiada para a área de transferência!');
-};
-
-/***********************
- * Inicialização
+ * INICIALIZAÇÃO
  ***********************/
 document.addEventListener('DOMContentLoaded', function() {
-    // render inicial
+    // Renderizar conteúdo inicial
     renderAll();
-
-    // mobile menu
+    
+    // Menu mobile
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const nav = document.querySelector('nav');
-    mobileMenuBtn.addEventListener('click', () => nav.classList.toggle('active'));
-    document.querySelectorAll('nav a').forEach(link => link.addEventListener('click', () => nav.classList.remove('active')));
-
-    // smooth scroll
+    
+    mobileMenuBtn.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+    
+    // Fechar menu ao clicar em um link
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('active');
+        });
+    });
+    
+    // Smooth scroll para links internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
+            
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                window.scrollTo({ top: targetElement.offsetTop - 80, behavior: 'smooth' });
+                const offsetTop = targetElement.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
             }
         });
     });
-
-    // contact form behavior
+    
+    // Formulário de contato
     const contactForm = document.getElementById('contactForm');
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
+        
         const name = document.getElementById('contact_name').value.trim();
         const email = document.getElementById('contact_email').value.trim();
         const message = document.getElementById('contact_message').value.trim();
@@ -642,8 +823,8 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Por favor, preencha todos os campos.');
         }
     });
-
-    // Admin modal open
+    
+    // Sistema administrativo
     const openAdminBtn = document.getElementById('openAdminBtn');
     const loginModal = document.getElementById('loginModal');
     const submitLogin = document.getElementById('submitLogin');
@@ -651,114 +832,461 @@ document.addEventListener('DOMContentLoaded', function() {
     const adminPanel = document.getElementById('adminPanel');
     const logoutBtn = document.getElementById('logoutBtn');
     const closeAdminPanel = document.getElementById('closeAdminPanel');
-
+    const saveAllBtn = document.getElementById('saveAllBtn');
+    const resetDataBtn = document.getElementById('resetDataBtn');
+    
+    // Abrir painel admin
     openAdminBtn.addEventListener('click', () => {
-        // if já logado, abrir painel direto
         if (isAdmin()) {
             openAdminPanel();
-            return;
+        } else {
+            loginModal.classList.add('show');
         }
-        loginModal.classList.add('show');
-        loginModal.setAttribute('aria-hidden', 'false');
     });
-
-    cancelLogin.addEventListener('click', () => {
-        loginModal.classList.remove('show');
-        loginModal.setAttribute('aria-hidden', 'true');
-    });
-
+    
+    // Login admin
     submitLogin.addEventListener('click', () => {
         const email = document.getElementById('adminEmailInput').value.trim();
         const pass = document.getElementById('adminPass').value.trim();
+        
         if (email === ADMIN_CREDENTIALS.email && pass === ADMIN_CREDENTIALS.pass) {
             setAdmin(true);
             loginModal.classList.remove('show');
-            loginModal.setAttribute('aria-hidden', 'true');
             openAdminPanel();
-            populateAdminFields();
-            alert('Login bem-sucedido. Seja bem-vindo(a), administrador(a).');
-            // limpar campos
+            alert('Login realizado com sucesso!');
+            
+            // Limpar campos
             document.getElementById('adminEmailInput').value = '';
             document.getElementById('adminPass').value = '';
         } else {
-            alert('Credenciais inválidas. Verifique e-mail e senha.');
+            alert('Credenciais inválidas. Tente novamente.');
         }
     });
-
-    // CORREÇÃO: fechar painel admin
+    
+    // Cancelar login
+    cancelLogin.addEventListener('click', () => {
+        loginModal.classList.remove('show');
+    });
+    
+    // Fechar painel admin
     closeAdminPanel.addEventListener('click', closeAdminPanel);
-
-    // logout
-    logoutBtn.addEventListener('click', function() {
+    
+    // Logout
+    logoutBtn.addEventListener('click', () => {
         setAdmin(false);
-        document.getElementById('logoutBtn').style.display = 'none';
         closeAdminPanel();
-        alert('Você saiu da conta administrativa.');
-    });
-
-    // botões de adicionar item
-    document.getElementById('addMinistryBtn').addEventListener('click', () => {
-        const container = document.getElementById('adminMinistriesList');
-        container.appendChild(buildMinistryAdminRow({ name: '', description: '', icon: 'fas fa-hands-helping' }));
+        alert('Logout realizado com sucesso!');
     });
     
-    document.getElementById('addEventBtn').addEventListener('click', () => {
-        const container = document.getElementById('adminEventsList');
-        container.appendChild(buildEventAdminRow({ day: '', month: '', title: '', time: '', location: '' }));
-    });
+    // Salvar dados
+    saveAllBtn.addEventListener('click', saveAdminData);
     
-    document.getElementById('addSermonBtn').addEventListener('click', () => {
-        const container = document.getElementById('adminSermonList');
-        container.appendChild(buildSermonAdminRow({ title: '', pastor: '', date: '', img: '', url: '', description: '' }));
-    });
-
-    // salvar alterações
-    document.getElementById('saveAllBtn').addEventListener('click', collectAdminFieldsAndSave);
-
-    // restaurar
-    document.getElementById('resetDataBtn').addEventListener('click', resetToDefault);
-
-    // quando abrir o painel, mostrar botão logout
-    if (isAdmin()) {
-        document.getElementById('logoutBtn').style.display = 'inline-block';
-    }
-
-    // quando fechar modal clicando fora
+    // Resetar dados
+    resetDataBtn.addEventListener('click', resetToDefault);
+    
+    // Fechar modal ao clicar fora
     loginModal.addEventListener('click', (e) => {
         if (e.target === loginModal) {
             loginModal.classList.remove('show');
-            loginModal.setAttribute('aria-hidden', 'true');
         }
     });
-
+    
     // Navegação entre abas do admin
     document.querySelectorAll('.admin-tab').forEach(tab => {
         tab.addEventListener('click', function() {
-            // Remove active de todas as abas
-            document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.admin-tab-content').forEach(c => c.classList.remove('active'));
+            // Remover active de todas as abas
+            document.querySelectorAll('.admin-tab').forEach(t => {
+                t.classList.remove('active');
+            });
             
-            // Adiciona active à aba clicada
+            // Esconder todos os conteúdos
+            document.querySelectorAll('.admin-tab-content').forEach(c => {
+                c.classList.remove('active');
+            });
+            
+            // Ativar aba clicada
             this.classList.add('active');
             
-            // Mostra o conteúdo correspondente
+            // Mostrar conteúdo correspondente
             const tabId = this.getAttribute('data-tab');
-            document.getElementById(`admin${tabId.charAt(0).toUpperCase() + tabId.slice(1)}Tab`).classList.add('active');
+            document.getElementById(tabId + 'Tab').classList.add('active');
             
-            // Se for a aba de emails, renderizar emails
+            // Se for a aba de emails, renderizar
             if (tabId === 'emails') {
                 renderEmails();
             }
         });
     });
-
-    // Eventos para busca e filtro de emails
+    
+    // Botões de adicionar itens
+    document.getElementById('addMinistryBtn').addEventListener('click', () => {
+        const container = document.getElementById('adminMinistriesList');
+        const newRow = createMinistryRow({
+            name: '',
+            description: '',
+            icon: 'fas fa-hands-helping'
+        });
+        container.appendChild(newRow);
+    });
+    
+    document.getElementById('addEventBtn').addEventListener('click', () => {
+        const container = document.getElementById('adminEventsList');
+        const newRow = createEventRow({
+            day: '',
+            month: '',
+            title: '',
+            time: '',
+            location: ''
+        });
+        container.appendChild(newRow);
+    });
+    
+    document.getElementById('addSermonBtn').addEventListener('click', () => {
+        const container = document.getElementById('adminSermonsList');
+        const newRow = createSermonRow({
+            title: '',
+            pastor: '',
+            date: '',
+            img: '',
+            url: '',
+            description: ''
+        });
+        container.appendChild(newRow);
+    });
+    
+    // Busca e filtro de emails
     document.getElementById('searchEmail').addEventListener('input', renderEmails);
     document.getElementById('filterCategory').addEventListener('change', renderEmails);
-
-    // Se admin já está autenticado, mostrar painel reduzido botão logout
+    
+    // Adicionar email manualmente
+    document.getElementById('addManualEmail').addEventListener('click', addManualEmail);
+    
+    // Exportar emails
+    document.getElementById('exportEmails').addEventListener('click', exportEmails);
+    
+    // Mostrar botão de logout se já estiver logado
     if (isAdmin()) {
-        // não abrir automaticamente, apenas mostrar que está logado
         document.getElementById('logoutBtn').style.display = 'inline-block';
     }
+});
+
+// Adicionar alguns elementos dinâmicos ao DOM para o admin
+document.addEventListener('DOMContentLoaded', function() {
+    // Adicionar containers para as listas admin
+    const contentTab = document.getElementById('contentTab');
+    const eventsTab = document.getElementById('eventsTab');
+    const sermonsTab = document.getElementById('sermonsTab');
+    const emailsTab = document.getElementById('emailsTab');
+    const settingsTab = document.getElementById('settingsTab');
+    
+    // Conteúdo da aba de Conteúdo
+    contentTab.innerHTML = `
+        <div class="admin-section">
+            <h4>Página Inicial</h4>
+            <div class="form-group">
+                <label>Título Principal</label>
+                <input type="text" id="adminHeroTitle" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Endereço</label>
+                <input type="text" id="adminAddress" class="form-control">
+            </div>
+        </div>
+        
+        <div class="admin-section">
+            <h4>Sobre a Igreja</h4>
+            <div class="form-group">
+                <label>Título da Seção</label>
+                <input type="text" id="adminAboutTitle" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Subtítulo</label>
+                <input type="text" id="adminAboutSubtitle" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Texto 1</label>
+                <textarea id="adminAboutText1" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Texto 2</label>
+                <textarea id="adminAboutText2" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Texto 3</label>
+                <textarea id="adminAboutText3" class="form-control" rows="3"></textarea>
+            </div>
+        </div>
+        
+        <div class="admin-section">
+            <h4>Ministérios</h4>
+            <div class="form-group">
+                <label>Título da Seção</label>
+                <input type="text" id="adminMinistriesTitle" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Subtítulo</label>
+                <input type="text" id="adminMinistriesSubtitle" class="form-control">
+            </div>
+            <div id="adminMinistriesList"></div>
+            <button id="addMinistryBtn" class="btn btn-outline">+ Adicionar Ministério</button>
+        </div>
+        
+        <div class="admin-section">
+            <h4>Doações</h4>
+            <div class="form-group">
+                <label>Título da Seção</label>
+                <input type="text" id="adminDonationTitle" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Subtítulo</label>
+                <input type="text" id="adminDonationSubtitle" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Texto Principal</label>
+                <textarea id="adminDonationText" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Descrição PIX</label>
+                <input type="text" id="adminPixDescription" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Texto Doação Presencial</label>
+                <input type="text" id="adminPresentialDonationText" class="form-control">
+            </div>
+        </div>
+    `;
+    
+    // Conteúdo da aba de Eventos
+    eventsTab.innerHTML = `
+        <div class="admin-section">
+            <h4>Eventos</h4>
+            <div class="form-group">
+                <label>Título da Seção</label>
+                <input type="text" id="adminEventsTitle" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Subtítulo</label>
+                <input type="text" id="adminEventsSubtitle" class="form-control">
+            </div>
+            <div id="adminEventsList"></div>
+            <button id="addEventBtn" class="btn btn-outline">+ Adicionar Evento</button>
+        </div>
+    `;
+    
+    // Conteúdo da aba de Pregações
+    sermonsTab.innerHTML = `
+        <div class="admin-section">
+            <h4>Pregações</h4>
+            <div class="form-group">
+                <label>Título da Seção</label>
+                <input type="text" id="adminSermonsTitle" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Subtítulo</label>
+                <input type="text" id="adminSermonsSubtitle" class="form-control">
+            </div>
+            <div id="adminSermonsList"></div>
+            <button id="addSermonBtn" class="btn btn-outline">+ Adicionar Pregação</button>
+        </div>
+    `;
+    
+    // Conteúdo da aba de Emails
+    emailsTab.innerHTML = `
+        <div class="admin-section">
+            <h4>Gerenciar Emails</h4>
+            <p class="muted">Gerencie os emails coletados através do formulário de contato</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalEmails">0</div>
+                    <div class="stat-label">Total de Emails</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="newThisWeek">0</div>
+                    <div class="stat-label">Novos esta semana</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="subscribed">0</div>
+                    <div class="stat-label">Inscritos</div>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <input type="text" id="searchEmail" placeholder="Buscar email..." class="form-control">
+                </div>
+                <div class="form-group">
+                    <select id="filterCategory" class="form-control">
+                        <option value="">Todas as categorias</option>
+                        <option value="membro">Membro</option>
+                        <option value="visitante">Visitante</option>
+                        <option value="voluntario">Voluntário</option>
+                        <option value="doador">Doador</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div id="emailsList" class="emails-container"></div>
+            
+            <button id="exportEmails" class="btn btn-primary">
+                <i class="fas fa-download"></i> Exportar Emails (CSV)
+            </button>
+        </div>
+        
+        <div class="admin-section">
+            <h4>Adicionar Email Manualmente</h4>
+            <div class="form-row">
+                <div class="form-group">
+                    <input type="text" id="newEmailName" placeholder="Nome" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="newEmailAddress" placeholder="E-mail" class="form-control">
+                </div>
+                <div class="form-group">
+                    <select id="newEmailCategory" class="form-control">
+                        <option value="membro">Membro</option>
+                        <option value="visitante">Visitante</option>
+                        <option value="voluntario">Voluntário</option>
+                        <option value="doador">Doador</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button id="addManualEmail" class="btn btn-outline">Adicionar</button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Conteúdo da aba de Configurações
+    settingsTab.innerHTML = `
+        <div class="admin-section">
+            <h4>Contato & Horários</h4>
+            <div class="form-group">
+                <label>Endereço</label>
+                <input type="text" id="adminContactAddress" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Telefone</label>
+                <input type="text" id="adminPhone" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>E-mail</label>
+                <input type="email" id="adminEmail" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Horários de Culto</label>
+                <textarea id="adminServiceTimes" class="form-control" rows="6"></textarea>
+            </div>
+        </div>
+        
+        <div class="admin-section">
+            <h4>PIX</h4>
+            <div class="form-group">
+                <label>Chave PIX</label>
+                <input type="text" id="adminPix" class="form-control">
+            </div>
+        </div>
+    `;
+    
+    // Adicionar alguns estilos dinâmicos
+    const style = document.createElement('style');
+    style.textContent = `
+        .admin-item-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .admin-item-row input {
+            flex: 1;
+            min-width: 120px;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid var(--gray-light);
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .stat-card {
+            background: var(--light);
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            border: 1px solid var(--gray-light);
+        }
+        
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+        
+        .emails-container {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 15px;
+        }
+        
+        .email-item {
+            background: var(--light);
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            border-left: 4px solid var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .email-info {
+            flex: 1;
+        }
+        
+        .email-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .email-address {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .email-category {
+            background: var(--gray-light);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            color: var(--dark);
+        }
+    `;
+    document.head.appendChild(style);
 });
