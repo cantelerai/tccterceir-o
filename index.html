@@ -407,29 +407,95 @@
             <button class="admin-tab active" data-tab="content">Conteúdo</button>
             <button class="admin-tab" data-tab="events">Eventos</button>
             <button class="admin-tab" data-tab="sermons">Pregações</button>
-            <button class="admin-tab" data-tab="emails">Emails</button>
             <button class="admin-tab" data-tab="settings">Configurações</button>
         </div>
 
-        <!-- Conteúdo das abas -->
+        <!-- Conteúdo -->
         <div id="adminContentTab" class="admin-tab-content active">
-            <!-- Conteúdo será preenchido via JavaScript -->
+            <div class="admin-section">
+                <h4>Página Inicial</h4>
+                <label class="muted">Título Principal</label>
+                <input id="adminHeroTitle" type="text" style="width:100%; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0;">
+                <label class="muted" style="margin-top:8px; display:block;">Subtítulo/Endereço</label>
+                <input id="adminAddress" type="text" style="width:100%; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0;">
+            </div>
+
+            <div class="admin-section">
+                <h4>Sobre a Igreja</h4>
+                <label class="muted">Título da Seção</label>
+                <input id="adminAboutTitle" type="text" style="width:100%; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0;">
+                <label class="muted" style="margin-top:8px; display:block;">Subtítulo</label>
+                <input id="adminAboutSubtitle" type="text" style="width:100%; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0;">
+                <label class="muted" style="margin-top:8px; display:block;">Texto 1</label>
+                <textarea id="adminAboutText1" style="width:100%; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0; min-height:80px;"></textarea>
+                <label class="muted" style="margin-top:8px; display:block;">Texto 2</label>
+                <textarea id="adminAboutText2" style="width:100%; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0; min-height:80px;"></textarea>
+                <label class="muted" style="margin-top:8px; display:block;">Texto 3</label>
+                <textarea id="adminAboutText3" style="width:100%; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0; min-height:80px;"></textarea>
+            </div>
+
+            <div class="admin-section">
+                <h4>Ministérios</h4>
+                <label class="muted">Título da Seção</label>
+                <input id="adminMinistriesTitle" type="text" style="width:100%; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0;">
+                <label class="muted" style="margin-top:8px; display:block;">Subtítulo</label>
+                <input id="adminMinistriesSubtitle" type="text" style="width:100%; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0;">
+                <div id="adminMinistriesList"></div>
+                <button id="addMinistryBtn" class="btn btn-outline" style="margin-top:8px;">+ Adicionar Ministério</button>
+            </div>
+
+            <div class="admin-section">
+                <h4>Doações</h4>
+                <label class="muted">Título da Seção</label>
+                <input id="adminDonationTitle" type="text" style="width:100%; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0;">
+                <label class="muted" style="margin-top:8px; display:block;">Subtítulo</label>
+                <input id="adminDonationSubtitle" type="text" style="width:100%; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0;">
+                <label class="muted" style="margin-top:8px; display:block;">Texto Principal</label>
+                <textarea id="adminDonationText" style="width:100%; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0; min-height:80px;"></textarea>
+                <label class="muted" style="margin-top:8px; display:block;">Descrição PIX</label>
+                <input id="adminPixDescription" type="text" style="width:100%; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0;">
+                <label class="muted" style="margin-top:8px; display:block;">Texto Doação Presencial</label>
+                <input id="adminPresentialDonationText" type="text" style="width:100%; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0;">
+            </div>
         </div>
 
+        <!-- Eventos -->
         <div id="adminEventsTab" class="admin-tab-content">
-            <!-- Eventos serão preenchidos via JavaScript -->
+            <div class="admin-section" id="adminEventsSection">
+                <h4>Eventos</h4>
+                <div id="adminEventsList"></div>
+                <button id="addEventBtn" class="btn btn-outline" style="margin-top:8px;">+ Adicionar Evento</button>
+            </div>
         </div>
 
+        <!-- Pregações -->
         <div id="adminSermonsTab" class="admin-tab-content">
-            <!-- Pregações serão preenchidas via JavaScript -->
+            <div class="admin-section" id="adminSermonsSection">
+                <h4>Pregações</h4>
+                <div id="adminSermonList"></div>
+                <button id="addSermonBtn" class="btn btn-outline" style="margin-top:8px;">+ Adicionar Pregação</button>
+            </div>
         </div>
 
-        <div id="adminEmailsTab" class="admin-tab-content">
-            <!-- Emails serão preenchidos via JavaScript -->
-        </div>
-
+        <!-- Configurações -->
         <div id="adminSettingsTab" class="admin-tab-content">
-            <!-- Configurações serão preenchidas via JavaScript -->
+            <div class="admin-section" id="adminContactSection">
+                <h4>Contato & Horários</h4>
+                <label class="muted">Endereço</label>
+                <input id="adminContactAddress" type="text" style="width:100%; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0;">
+                <label class="muted" style="margin-top:8px; display:block;">Telefone</label>
+                <input id="adminPhone" type="text" style="width:100%; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0;">
+                <label class="muted" style="margin-top:8px; display:block;">E-mail</label>
+                <input id="adminEmail" type="email" style="width:100%; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0;">
+                <label class="muted" style="margin-top:8px; display:block;">Horários de Culto</label>
+                <textarea id="adminServiceTimes" style="width:100%; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0; min-height:150px;"></textarea>
+            </div>
+
+            <div class="admin-section" id="adminPixSection">
+                <h4>PIX</h4>
+                <label class="muted">Chave PIX</label>
+                <input id="adminPix" type="text" style="width:100%; padding:8px 10px; border-radius:6px; border:1px solid #e2e8f0;">
+            </div>
         </div>
 
         <div style="display:flex; gap:8px; justify-content:flex-end; margin-top:10px;">
@@ -494,6 +560,19 @@ Domingo: 19h00 (Culto)`,
             ]
         };
 
+        // Funções de utilitário
+        function isAdmin() {
+            return localStorage.getItem('isAdmin_v1') === "true";
+        }
+
+        function setAdmin(flag) {
+            localStorage.setItem('isAdmin_v1', flag ? "true" : "false");
+        }
+
+        function uid() {
+            return Math.floor(Math.random() * 1000000);
+        }
+
         // Função para copiar PIX
         function copyPixKey() {
             const pixKey = document.getElementById('pixKey').textContent;
@@ -502,58 +581,10 @@ Domingo: 19h00 (Culto)`,
             });
         }
 
-        // Inicialização quando a página carregar
-        document.addEventListener('DOMContentLoaded', function() {
-            // Renderizar dados iniciais
-            renderAll();
-            
-            // Menu mobile
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const nav = document.querySelector('nav');
-            if (mobileMenuBtn && nav) {
-                mobileMenuBtn.addEventListener('click', () => nav.classList.toggle('active'));
-            }
-
-            // Smooth scroll
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({ top: targetElement.offsetTop - 80, behavior: 'smooth' });
-                    }
-                });
-            });
-
-            // Formulário de contato
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const name = document.getElementById('contact_name').value.trim();
-                    const email = document.getElementById('contact_email').value.trim();
-                    const message = document.getElementById('contact_message').value.trim();
-                    
-                    if (name && email && message) {
-                        alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-                        contactForm.reset();
-                    } else {
-                        alert('Por favor, preencha todos os campos.');
-                    }
-                });
-            }
-
-            console.log('Site da Igreja carregado com sucesso!');
-        });
-
-        // Função para renderizar todos os dados
+        // Funções de renderização
         function renderAll() {
-            // Usar dados padrão por enquanto
             const data = defaultData;
             
-            // Preencher conteúdo textual
             document.getElementById('heroTitle').textContent = data.heroTitle;
             document.getElementById('addressText').textContent = data.address;
             document.getElementById('aboutTitle').textContent = data.aboutTitle;
@@ -576,7 +607,6 @@ Domingo: 19h00 (Culto)`,
             document.getElementById('presentialDonationText').textContent = data.presentialDonationText;
             document.getElementById('pixKey').textContent = data.pix;
             
-            // Renderizar elementos dinâmicos
             renderMinistries(data.ministries);
             renderEvents(data.events);
             renderSermons(data.sermons);
@@ -662,6 +692,354 @@ Domingo: 19h00 (Culto)`,
                 <div>${data.serviceTimes.replace(/\n/g, '<br>')}</div>
             `;
         }
+
+        // Funções do Admin
+        function buildMinistryAdminRow(min) {
+            const wrap = document.createElement('div');
+            wrap.className = 'item-row';
+            wrap.innerHTML = `
+                <input type="text" data-field="name" value="${min.name || ''}" placeholder="Nome do ministério">
+                <input type="text" data-field="description" value="${min.description || ''}" placeholder="Descrição">
+                <input type="text" data-field="icon" value="${min.icon || ''}" placeholder="Ícone (FontAwesome)">
+                <button class="btn btn-outline btn-remove">Remover</button>
+            `;
+            wrap.querySelector('.btn-remove').addEventListener('click', () => wrap.remove());
+            return wrap;
+        }
+
+        function buildEventAdminRow(ev) {
+            const wrap = document.createElement('div');
+            wrap.className = 'item-row';
+            wrap.innerHTML = `
+                <input type="text" data-field="day" value="${ev.day || ''}" placeholder="Dia">
+                <input type="text" data-field="month" value="${ev.month || ''}" placeholder="Mês">
+                <input type="text" data-field="title" value="${ev.title || ''}" placeholder="Título">
+                <input type="text" data-field="time" value="${ev.time || ''}" placeholder="Horário">
+                <input type="text" data-field="location" value="${ev.location || ''}" placeholder="Local">
+                <button class="btn btn-outline btn-remove">Remover</button>
+            `;
+            wrap.querySelector('.btn-remove').addEventListener('click', () => wrap.remove());
+            return wrap;
+        }
+
+        function buildSermonAdminRow(s) {
+            const wrap = document.createElement('div');
+            wrap.className = 'item-row';
+            wrap.innerHTML = `
+                <input type="text" data-field="title" value="${s.title || ''}" placeholder="Título">
+                <input type="text" data-field="pastor" value="${s.pastor || ''}" placeholder="Pastor">
+                <input type="text" data-field="date" value="${s.date || ''}" placeholder="Data">
+                <input type="text" data-field="img_url" value="${s.img_url || ''}" placeholder="URL da imagem">
+                <input type="text" data-field="video_url" value="${s.video_url || ''}" placeholder="URL do vídeo">
+                <input type="text" data-field="description" value="${s.description || ''}" placeholder="Descrição">
+                <button class="btn btn-outline btn-remove">Remover</button>
+            `;
+            wrap.querySelector('.btn-remove').addEventListener('click', () => wrap.remove());
+            return wrap;
+        }
+
+        function populateAdminFields() {
+            const data = defaultData;
+            
+            // Conteúdo textual
+            document.getElementById('adminHeroTitle').value = data.heroTitle || '';
+            document.getElementById('adminAddress').value = data.address || '';
+            document.getElementById('adminAboutTitle').value = data.aboutTitle || '';
+            document.getElementById('adminAboutSubtitle').value = data.aboutSubtitle || '';
+            document.getElementById('adminAboutText1').value = data.aboutText1 || '';
+            document.getElementById('adminAboutText2').value = data.aboutText2 || '';
+            document.getElementById('adminAboutText3').value = data.aboutText3 || '';
+            document.getElementById('adminMinistriesTitle').value = data.ministriesTitle || '';
+            document.getElementById('adminMinistriesSubtitle').value = data.ministriesSubtitle || '';
+            document.getElementById('adminDonationTitle').value = data.donationTitle || '';
+            document.getElementById('adminDonationSubtitle').value = data.donationSubtitle || '';
+            document.getElementById('adminDonationText').value = data.donationText || '';
+            document.getElementById('adminPixDescription').value = data.pixDescription || '';
+            document.getElementById('adminPresentialDonationText').value = data.presentialDonationText || '';
+            
+            // Ministérios
+            const adminMinistriesList = document.getElementById('adminMinistriesList');
+            if (adminMinistriesList) {
+                adminMinistriesList.innerHTML = '';
+                data.ministries.forEach(min => adminMinistriesList.appendChild(buildMinistryAdminRow(min)));
+            }
+            
+            // Eventos
+            const adminEventsList = document.getElementById('adminEventsList');
+            if (adminEventsList) {
+                adminEventsList.innerHTML = '';
+                data.events.forEach(ev => adminEventsList.appendChild(buildEventAdminRow(ev)));
+            }
+            
+            // Pregações
+            const adminSermonList = document.getElementById('adminSermonList');
+            if (adminSermonList) {
+                adminSermonList.innerHTML = '';
+                data.sermons.forEach(s => adminSermonList.appendChild(buildSermonAdminRow(s)));
+            }
+            
+            // Configurações
+            document.getElementById('adminContactAddress').value = data.address || '';
+            document.getElementById('adminPhone').value = data.phone || '';
+            document.getElementById('adminEmail').value = data.email || '';
+            document.getElementById('adminPix').value = data.pix || '';
+            document.getElementById('adminServiceTimes').value = data.serviceTimes || '';
+        }
+
+        function openAdminPanel() {
+            document.getElementById('adminPanel').classList.add('show');
+            document.getElementById('logoutBtn').style.display = 'inline-block';
+            populateAdminFields();
+        }
+
+        function closeAdminPanel() {
+            document.getElementById('adminPanel').classList.remove('show');
+        }
+
+        function collectAdminFieldsAndSave() {
+            try {
+                // Atualizar dados locais com os valores do admin
+                defaultData.heroTitle = document.getElementById('adminHeroTitle').value;
+                defaultData.address = document.getElementById('adminAddress').value;
+                defaultData.aboutTitle = document.getElementById('adminAboutTitle').value;
+                defaultData.aboutSubtitle = document.getElementById('adminAboutSubtitle').value;
+                defaultData.aboutText1 = document.getElementById('adminAboutText1').value;
+                defaultData.aboutText2 = document.getElementById('adminAboutText2').value;
+                defaultData.aboutText3 = document.getElementById('adminAboutText3').value;
+                defaultData.ministriesTitle = document.getElementById('adminMinistriesTitle').value;
+                defaultData.ministriesSubtitle = document.getElementById('adminMinistriesSubtitle').value;
+                defaultData.donationTitle = document.getElementById('adminDonationTitle').value;
+                defaultData.donationSubtitle = document.getElementById('adminDonationSubtitle').value;
+                defaultData.donationText = document.getElementById('adminDonationText').value;
+                defaultData.pixDescription = document.getElementById('adminPixDescription').value;
+                defaultData.presentialDonationText = document.getElementById('adminPresentialDonationText').value;
+                defaultData.serviceTimes = document.getElementById('adminServiceTimes').value;
+                defaultData.phone = document.getElementById('adminPhone').value;
+                defaultData.email = document.getElementById('adminEmail').value;
+                defaultData.pix = document.getElementById('adminPix').value;
+                
+                // Atualizar ministérios
+                const ministryNodes = Array.from(document.getElementById('adminMinistriesList').querySelectorAll('.item-row'));
+                defaultData.ministries = ministryNodes.map(node => ({
+                    id: uid(),
+                    name: node.querySelector('[data-field="name"]').value,
+                    description: node.querySelector('[data-field="description"]').value,
+                    icon: node.querySelector('[data-field="icon"]').value
+                }));
+                
+                // Atualizar eventos
+                const eventNodes = Array.from(document.getElementById('adminEventsList').querySelectorAll('.item-row'));
+                defaultData.events = eventNodes.map(node => ({
+                    id: uid(),
+                    day: node.querySelector('[data-field="day"]').value,
+                    month: node.querySelector('[data-field="month"]').value,
+                    title: node.querySelector('[data-field="title"]').value,
+                    time: node.querySelector('[data-field="time"]').value,
+                    location: node.querySelector('[data-field="location"]').value
+                }));
+                
+                // Atualizar pregações
+                const sermonNodes = Array.from(document.getElementById('adminSermonList').querySelectorAll('.item-row'));
+                defaultData.sermons = sermonNodes.map(node => ({
+                    id: uid(),
+                    title: node.querySelector('[data-field="title"]').value,
+                    pastor: node.querySelector('[data-field="pastor"]').value,
+                    date: node.querySelector('[data-field="date"]').value,
+                    img_url: node.querySelector('[data-field="img_url"]').value,
+                    video_url: node.querySelector('[data-field="video_url"]').value,
+                    description: node.querySelector('[data-field="description"]').value
+                }));
+                
+                alert('Alterações salvas com sucesso!');
+                renderAll();
+            } catch (error) {
+                console.error('Erro ao salvar dados:', error);
+                alert('Erro ao salvar alterações.');
+            }
+        }
+
+        function resetToDefault() {
+            if (!confirm('Restaurar os dados padrões?')) return;
+            localStorage.removeItem('isAdmin_v1');
+            location.reload();
+        }
+
+        // Inicialização quando a página carregar
+        document.addEventListener('DOMContentLoaded', function() {
+            // Renderizar dados iniciais
+            renderAll();
+            
+            // Menu mobile
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('nav');
+            if (mobileMenuBtn && nav) {
+                mobileMenuBtn.addEventListener('click', () => nav.classList.toggle('active'));
+                document.querySelectorAll('nav a').forEach(link => {
+                    link.addEventListener('click', () => nav.classList.remove('active'));
+                });
+            }
+
+            // Smooth scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({ top: targetElement.offsetTop - 80, behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // Formulário de contato
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const name = document.getElementById('contact_name').value.trim();
+                    const email = document.getElementById('contact_email').value.trim();
+                    const message = document.getElementById('contact_message').value.trim();
+                    
+                    if (name && email && message) {
+                        alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+                        contactForm.reset();
+                    } else {
+                        alert('Por favor, preencha todos os campos.');
+                    }
+                });
+            }
+
+            // Admin modal open
+            const openAdminBtn = document.getElementById('openAdminBtn');
+            const loginModal = document.getElementById('loginModal');
+            const submitLogin = document.getElementById('submitLogin');
+            const cancelLogin = document.getElementById('cancelLogin');
+            const adminPanel = document.getElementById('adminPanel');
+            const logoutBtn = document.getElementById('logoutBtn');
+            const closeAdminPanel = document.getElementById('closeAdminPanel');
+
+            if (openAdminBtn) {
+                openAdminBtn.addEventListener('click', () => {
+                    if (isAdmin()) {
+                        openAdminPanel();
+                        return;
+                    }
+                    loginModal.classList.add('show');
+                });
+            }
+
+            if (cancelLogin) {
+                cancelLogin.addEventListener('click', () => {
+                    loginModal.classList.remove('show');
+                });
+            }
+
+            if (submitLogin) {
+                submitLogin.addEventListener('click', () => {
+                    const email = document.getElementById('adminEmailInput').value.trim();
+                    const pass = document.getElementById('adminPass').value.trim();
+                    
+                    // Credenciais simples para demonstração
+                    if (email === 'admin@igreja.com' && pass === '123456') {
+                        setAdmin(true);
+                        loginModal.classList.remove('show');
+                        openAdminPanel();
+                        alert('Login bem-sucedido. Seja bem-vindo(a), administrador(a).');
+                        document.getElementById('adminEmailInput').value = '';
+                        document.getElementById('adminPass').value = '';
+                    } else {
+                        alert('Credenciais inválidas. Use: admin@igreja.com / 123456');
+                    }
+                });
+            }
+
+            if (closeAdminPanel) {
+                closeAdminPanel.addEventListener('click', closeAdminPanel);
+            }
+
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', function() {
+                    setAdmin(false);
+                    document.getElementById('logoutBtn').style.display = 'none';
+                    closeAdminPanel();
+                    alert('Você saiu da conta administrativa.');
+                });
+            }
+
+            // Botões de adicionar item
+            const addMinistryBtn = document.getElementById('addMinistryBtn');
+            if (addMinistryBtn) {
+                addMinistryBtn.addEventListener('click', () => {
+                    const container = document.getElementById('adminMinistriesList');
+                    container.appendChild(buildMinistryAdminRow({ name: '', description: '', icon: 'fas fa-hands-helping' }));
+                });
+            }
+            
+            const addEventBtn = document.getElementById('addEventBtn');
+            if (addEventBtn) {
+                addEventBtn.addEventListener('click', () => {
+                    const container = document.getElementById('adminEventsList');
+                    container.appendChild(buildEventAdminRow({ day: '', month: '', title: '', time: '', location: '' }));
+                });
+            }
+            
+            const addSermonBtn = document.getElementById('addSermonBtn');
+            if (addSermonBtn) {
+                addSermonBtn.addEventListener('click', () => {
+                    const container = document.getElementById('adminSermonList');
+                    container.appendChild(buildSermonAdminRow({ title: '', pastor: '', date: '', img_url: '', video_url: '', description: '' }));
+                });
+            }
+
+            // Salvar alterações
+            const saveAllBtn = document.getElementById('saveAllBtn');
+            if (saveAllBtn) {
+                saveAllBtn.addEventListener('click', collectAdminFieldsAndSave);
+            }
+
+            // Restaurar
+            const resetDataBtn = document.getElementById('resetDataBtn');
+            if (resetDataBtn) {
+                resetDataBtn.addEventListener('click', resetToDefault);
+            }
+
+            // Quando abrir o painel, mostrar botão logout
+            if (isAdmin()) {
+                document.getElementById('logoutBtn').style.display = 'inline-block';
+            }
+
+            // Quando fechar modal clicando fora
+            if (loginModal) {
+                loginModal.addEventListener('click', (e) => {
+                    if (e.target === loginModal) {
+                        loginModal.classList.remove('show');
+                    }
+                });
+            }
+
+            // Navegação entre abas do admin
+            document.querySelectorAll('.admin-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active de todas as abas
+                    document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.admin-tab-content').forEach(c => c.classList.remove('active'));
+                    
+                    // Adiciona active à aba clicada
+                    this.classList.add('active');
+                    
+                    // Mostra o conteúdo correspondente
+                    const tabId = this.getAttribute('data-tab');
+                    const contentId = `admin${tabId.charAt(0).toUpperCase() + tabId.slice(1)}Tab`;
+                    const contentElement = document.getElementById(contentId);
+                    if (contentElement) {
+                        contentElement.classList.add('active');
+                    }
+                });
+            });
+
+            console.log('Site da Igreja carregado com sucesso!');
+        });
 
         // Expor funções globais
         window.copyPixKey = copyPixKey;
