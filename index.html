@@ -21,6 +21,7 @@
     }
     .event-date .day{font-size:1.4rem;font-weight:700;line-height:1}
     .event-date .month{text-transform:uppercase;font-size:.9rem;opacity:.9}
+    #debug { position:fixed; right:10px; bottom:10px; max-width:420px; z-index:9999; }
   </style>
 </head>
 <body>
@@ -101,38 +102,4 @@
   <!-- CONTATO -->
   <section id="contact" class="py-5 bg-dark text-white">
     <div class="container text-center">
-      <h2 id="contact-title">Contato e Horários</h2>
-      <p>Telefone: <span id="contact-phone">Carregando...</span></p>
-      <h4 class="mt-4">Horário de Cultos</h4>
-      <div id="service-times-list">Carregando horários...</div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-secondary text-white py-3">
-    <div class="container text-center">
-      <p id="footer-address">Carregando endereço...</p>
-      <p>&copy; 2025 AD Costeira. TCC Terceirão.</p>
-    </div>
-  </footer>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Supabase (ESM) + Lógica -->
-  <script type="module">
-    import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm";
-
-    // ==== SUPABASE ====
-    const SUPABASE_URL = "https://xskasveyyprxuuilkavit.supabase.co";
-    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhza2FzdnNleXB2eHV1bGtldmlsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgyOTEyODgsImV4cCI6MjA3Mzg2NzI4OH0.QMJOGkErNQPhW0ZnRKc6fC5f7Wxze68GnW7hf9lmMXo";
-    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-    console.log("✅ Supabase conectado");
-
-    const $ = (s) => document.querySelector(s);
-    const setText = (id, val) => { const el = document.getElementById(id); if (el && val != null) el.textContent = val; };
-    const html = (strings, ...vals) => strings.map((s,i)=>s+(vals[i]??"")).join("");
-
-    // Meses pt-BR -> índice p/ ordenação
-    const PT_MONTH_INDEX = { jan:0, fev:1, mar:2, abr:3, mai:4, jun:5, jul:6, ago:7, set:8, out:9, nov:10, dez:11 };
-    const monthToIndex = (m) => m ? PT_MONTH_INDEX[m.trim().t]()
+      <h2 id="contact-title">Contato e Horários</h2
