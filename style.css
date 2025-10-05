@@ -1,0 +1,147 @@
+/* =============================================== */
+/* 1. ESTILOS GERAIS E BASE (Reset e Fontes) */
+/* =============================================== */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333; /* Cor de texto padrão */
+    background-color: #fff;
+    /* Garante que o conteúdo role suavemente ao clicar em links âncora */
+    scroll-behavior: smooth;
+}
+
+/* Remove a linha de foco padrão em links para acessibilidade */
+a:focus, button:focus {
+    outline: none !important;
+}
+
+/* =============================================== */
+/* 2. CABEÇALHO E RODAPÉ */
+/* =============================================== */
+
+header {
+    background-color: #007bff !important; /* Cor Primária do Bootstrap */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+header nav a {
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+header nav a:hover {
+    color: #cce5ff !important; /* Um tom mais claro ao passar o mouse */
+}
+
+footer {
+    background-color: #343a40 !important; /* Cor Secundária (escura) do Bootstrap */
+    color: #f8f9fa;
+    font-size: 0.9rem;
+}
+
+/* =============================================== */
+/* 3. SEÇÕES GERAIS E TITULOS */
+/* =============================================== */
+section {
+    padding: 80px 0;
+}
+
+section.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+h2, h3 {
+    font-weight: 700;
+    color: #007bff; /* Títulos em cor primária */
+}
+
+/* =============================================== */
+/* 4. CARDS DE EVENTOS */
+/* =============================================== */
+
+.event-item {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    padding: 0; /* O padding está no JS, mas a estrutura externa é aqui */
+}
+
+.event-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.event-date {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.event-date .day {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.event-date .month {
+    display: block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.event-details {
+    padding: 0 15px 15px;
+}
+
+.event-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #343a40;
+    margin-bottom: 5px;
+}
+
+.event-meta {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* =============================================== */
+/* 5. FORMULÁRIO DE INSCRIÇÃO (O CSS que você pediu) */
+/* =============================================== */
+
+#inscricao {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* Estiliza o alerta que mostra o evento selecionado */
+#evento-selecionado-display {
+    font-weight: 600; 
+    border-left: 6px solid #28a745; /* Linha verde lateral */
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    background-color: #e6f7ea; 
+}
+
+/* Estilo para a mensagem de sucesso/erro (opcional) */
+#form-message span.text-success {
+    font-weight: bold;
+    color: #155724 !important;
+}
+
+/* Ajusta o padding dos botões para serem mais confortáveis */
+#inscricao-form .btn-lg {
+    padding: 10px 20px;
+    font-size: 1.15rem;
+}
